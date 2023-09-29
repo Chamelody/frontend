@@ -1,5 +1,8 @@
-### macOS ###
+# MacOS
 .DS_Store
 
-### NodeJS ###
-node_modules
+# production
+/build
+
+# dependencies
+/node_modules
