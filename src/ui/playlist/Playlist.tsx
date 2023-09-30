@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Playlist = (): JSX.Element => {
+const Playlist = (): JSX.Element => {
     return <></>;
 };
+
+export default Playlist;

@@ -1,5 +1,7 @@
 import React from "react";
 
-export const HomeEmoji = (): JSX.Element => {
-    return <></>;
+const HomeEmoji = (): JSX.Element => {
+    return <div style={{height: "100%", background: "black"}}></div>;;
 }
+
+export default HomeEmoji;
