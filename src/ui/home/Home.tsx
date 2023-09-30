@@ -1,8 +1,8 @@
 import React from "react";
-import FlexContainer from "../../components/FlexContainer";
+import Scaffold from "../../components/Scaffold";
 
 export const Home = (): JSX.Element => {
-    return <>
-        <div>asdfasdf</div>
-    </>;
+    return <Scaffold>
+        
+    </Scaffold>;
 };
