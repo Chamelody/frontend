@@ -49,13 +49,16 @@ export const ResponsiveText: React.FC<ReponsiveTextProps> = ({
     else if (fontSize === 'Tiny') selectedFontSize = ResponsiveFontSizeNumberConst.TINY;
     else selectedFontSize = fontSize;  // fontSize is number
 
-    if (isMobileScreen) finalFontSize = String(selectedFontSize * responsiveFontSizeWeights.MOBILE) + 'px';
-    else if (isTabletScreen) finalFontSize = String(selectedFontSize * responsiveFontSizeWeights.TABLET) + 'px';
-    else finalFontSize = String(selectedFontSize) + 'px'  // Desktop Screen
-
-    if (isMobileScreen) selectedWidth = typeof width === 'object' ? width[0] : width;
-    else if (isTabletScreen) selectedWidth = typeof width === 'object' ? width[1] : width;
-    else selectedWidth = typeof width === 'object' ? width[2] : width;  // Desktop Screen
+    if (isMobileScreen) {
+        finalFontSize = String(selectedFontSize * responsiveFontSizeWeights.MOBILE) + 'px';
+        selectedWidth = typeof width === 'object' ? width[0] : width;
+    } else if (isTabletScreen) {
+        finalFontSize = String(selectedFontSize * responsiveFontSizeWeights.TABLET) + 'px';
+        selectedWidth = typeof width === 'object' ? width[1] : width;
+    } else {  // Desktop Screen
+        finalFontSize = String(selectedFontSize) + 'px';
+        selectedWidth = typeof width === 'object' ? width[2] : width;
+    }
 
     return <p id={id} className={className} style={{
         color: color,
