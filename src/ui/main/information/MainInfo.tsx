@@ -1,5 +1,5 @@
 import React from "react";
-import InfoSection from "./flex/InfoSection";
+import InfoSection from "./InfoSection";
 import FlexContainer from "../../../components/FlexContainer";
 
 const MainInfo = (): JSX.Element => {
