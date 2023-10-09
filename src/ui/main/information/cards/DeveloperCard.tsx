@@ -47,6 +47,8 @@ const DeveloperCard = ({
                 position: "relative",
                 padding: "15px 20px",
                 boxSizing: 'border-box',
+                overflow: 'hidden',
+                minHeight: "150px",
             }}
         >
             <DivideContainer width="100%" height="100%" direction='column'>
@@ -66,9 +68,10 @@ const DeveloperCard = ({
                     right: 0, 
                     width: imageWidth,
                     height: imageHeight,
+                    maxWidth: "calc()"
                 }}
             />
-            
+
             {children}
         </div>
     );

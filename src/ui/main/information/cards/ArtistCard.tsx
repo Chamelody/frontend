@@ -24,9 +24,15 @@ const ArtistCard = ({
     const isMobileScreen = useMediaQuery({ maxWidth: ResponsiveSizeConst.MOBILE_SCREEN_MAX_WIDTH });
     
     let background;
+    let minHeight: string;
 
-    if (isTabletScreen) background = artistImage2;
-    else background = artistImage1;
+    if (isTabletScreen) {
+        background = artistImage2;
+        minHeight = "250px";
+    } else {
+        background = artistImage1;
+        minHeight = "150px";
+    }
 
     return (
         <div 
@@ -41,13 +47,14 @@ const ArtistCard = ({
                 backgroundPosition: 'center',
                 padding: "15px 20px",
                 boxSizing: 'border-box',
+                minHeight: minHeight,
             }}
         >
             <DivideContainer width="100%" height="100%" direction='column'>
-                <DivideItem ratio={1}>
+                <DivideItem ratio={10}>
                     <CardHead text="#artist" color='white' />
                 </DivideItem>
-                <DivideItem ratio={1}>
+                <DivideItem ratio={90}>
 
                 </DivideItem>
             </DivideContainer>

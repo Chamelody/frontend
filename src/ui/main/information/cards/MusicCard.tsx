@@ -24,9 +24,15 @@ const MusicCard = ({
     const isMobileScreen = useMediaQuery({ maxWidth: ResponsiveSizeConst.MOBILE_SCREEN_MAX_WIDTH });
     
     let background;
-
-    if (isTabletScreen) background = musicImage2;
-    else background = musicImage1;
+    let minHeight: string;
+    
+    if (isTabletScreen) {
+        background = musicImage2;
+        minHeight = "250px";
+    } else {
+        background = musicImage1;
+        minHeight = "150px";
+    }
 
     return (
         <div 
@@ -42,13 +48,14 @@ const MusicCard = ({
                 backgroundPosition: 'center',
                 padding: "15px 20px",
                 boxSizing: 'border-box',
+                minHeight: minHeight,
             }}
         >
             <DivideContainer width="100%" height="100%" direction='column'>
-                <DivideItem ratio={1}>
+                <DivideItem ratio={10}>
                     <CardHead text="#music" color='white' />
                 </DivideItem>
-                <DivideItem ratio={1}>
+                <DivideItem ratio={90}>
 
                 </DivideItem>
             </DivideContainer>

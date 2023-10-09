@@ -37,6 +37,7 @@ const MainCard = ({
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
+                minHeight: "300px",
             }}  
         >
             {children}

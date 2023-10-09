@@ -30,8 +30,8 @@ const TasteCard = ({
         imageWidth = "50%";
         imageHeight = "auto";
     } else if (isTabletScreen) {
-        imageWidth = "auto";
-        imageHeight = "50%";
+        imageWidth = "25%";
+        imageHeight = "auto";
     } else {
         imageWidth = "40%";
         imageHeight = "auto";
@@ -48,6 +48,7 @@ const TasteCard = ({
                 position: "relative",
                 padding: "15px 20px",
                 boxSizing: 'border-box',
+                minHeight: "150px",
             }}
         >
             <DivideContainer width="100%" height="100%" direction='column'>

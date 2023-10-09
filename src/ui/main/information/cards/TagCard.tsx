@@ -24,16 +24,20 @@ const TagCard = ({
 
     let imageWidth: string;
     let imageHeight: string;
+    let minHeight: string;
 
     if (isMobileScreen) {
         imageWidth = "40%";
         imageHeight = "auto";
+        minHeight = "150px";
     } else if (isTabletScreen) {
         imageWidth = "auto";
         imageHeight = "50%";
+        minHeight = "250px";
     } else {
         imageWidth = "50%";
         imageHeight = "auto";
+        minHeight = "150px";
     }
 
     return (
@@ -48,13 +52,14 @@ const TagCard = ({
                 background: "linear-gradient(90deg, #FEFEFE 50%, #9F9F9F 115.78%)",
                 padding: "15px 20px",
                 boxSizing: 'border-box',
+                minHeight: minHeight,
             }}
         >
             <DivideContainer width="100%" height="100%" direction='column'>
-                <DivideItem ratio={1}>
+                <DivideItem ratio={10}>
                     <CardHead text="#tag" color="#323232" />
                 </DivideItem>
-                <DivideItem ratio={1}>
+                <DivideItem ratio={90}>
 
                 </DivideItem>
             </DivideContainer>
@@ -69,7 +74,7 @@ const TagCard = ({
                     height: imageHeight,
                 }}
             />
-            
+
             {children}
         </div>
     );
