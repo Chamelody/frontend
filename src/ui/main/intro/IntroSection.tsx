@@ -33,8 +33,8 @@ const IntroSection = (): JSX.Element => {
         }
     } else if (isMobileScreen) {    // Mobile Screen
         componentLayoutInfo = {
-            Content: { height: "55%", width: "100%" },
-            LandingImage: { height: "45%", width: "100%" }
+            Content: { height: "52%", width: "100%" },
+            LandingImage: { height: "48%", width: "100%" }
         }
     } else {                        // Desktop Screen
         componentLayoutInfo = {

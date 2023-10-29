@@ -30,8 +30,8 @@ const Title = (): JSX.Element => {
         </FlexContainer>
 
         <FlexContainer flexWrap="wrap" {...flexContainerStyles}>
-          <WordBlock content={"with the - "} mode="default" />
-          {/*<img src={logo_img} alt='logo'/>*/}
+          <WordBlock content={"with the -"} mode="default" />
+          <WordBlock content={logo_img} mode="image" />
         </FlexContainer>
 
         <FlexContainer flexWrap="wrap" 
