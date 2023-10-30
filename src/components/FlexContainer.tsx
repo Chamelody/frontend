@@ -2,7 +2,7 @@ import React from "react"
 
 type FlexContainerProps = {
     children?: React.ReactNode,
-    flexDirection?: 'row' | 'column',
+    flexDirection?: 'row' | 'column' | 'row-reverse' | 'column-reverse',
     flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse',
     justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly',
     alignItems?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch',

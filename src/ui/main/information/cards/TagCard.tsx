@@ -4,6 +4,8 @@ import { useMediaQuery } from "react-responsive";
 import ResponsiveSizeConst from "../../../../constants/ResponsiveSizeConst";
 import CardHead from "./common/CardHead";
 import { DivideContainer, DivideItem } from "../../../../components/Divider";
+import FlexContainer from "../../../../components/FlexContainer";
+import { ResponsiveText } from "../../../../components/ResponsiveText";
 
 type TagCardProps = {
     children?: React.ReactNode;
@@ -25,19 +27,35 @@ const TagCard = ({
     let imageWidth: string;
     let imageHeight: string;
     let minHeight: string;
-
+    let headRatio: number;
+    let contentRatio: number;
+    let headTextWidth: string;
+    let contentTextWidth: string;
+    
     if (isMobileScreen) {
         imageWidth = "40%";
         imageHeight = "auto";
         minHeight = "150px";
+        headRatio = 40;
+        contentRatio = 60;
+        headTextWidth = "100%";
+        contentTextWidth = "100%";
     } else if (isTabletScreen) {
         imageWidth = "auto";
         imageHeight = "50%";
         minHeight = "250px";
+        headRatio = 20;
+        contentRatio = 80;
+        headTextWidth = "70%";
+        contentTextWidth = "70%";
     } else {
         imageWidth = "50%";
         imageHeight = "auto";
         minHeight = "150px";
+        headRatio = 40;
+        contentRatio = 60;
+        headTextWidth = "60%";
+        contentTextWidth = "30%";
     }
 
     return (
@@ -56,11 +74,17 @@ const TagCard = ({
             }}
         >
             <DivideContainer width="100%" height="100%" direction='column'>
-                <DivideItem ratio={10}>
+                <DivideItem ratio={headRatio}>
                     <CardHead text="#tag" color="#323232" />
                 </DivideItem>
-                <DivideItem ratio={90}>
-
+                <DivideItem ratio={contentRatio}>
+                    <ResponsiveText fontSize={'Small'} color="#323232" fontWeight={750} width={headTextWidth}
+                        {...{margin: 0}}>
+                        What Emotion Tags Can I Use?
+                    </ResponsiveText>
+                    <ResponsiveText fontSize={10} color="#616161" width={contentTextWidth} {...{margin: 0}}>
+                        나의 감정을 표현해주는 태그는 어떤 종류가 있을까요?
+                    </ResponsiveText>
                 </DivideItem>
             </DivideContainer>
 

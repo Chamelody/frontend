@@ -35,7 +35,7 @@ const CardHead = ({
                 </ResponsiveText>
             </FlexContainer>
             <FlexContainer justifyContent='center' alignItems='center' width={cardHeadMaxHeight} height="100%"
-                {...{background: 'white', borderRadius: "50%"}}>
+                {...{background: '#FEFEFE', borderRadius: "50%"}}>
                 
             </FlexContainer>
         </FlexContainer>

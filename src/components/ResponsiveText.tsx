@@ -4,7 +4,7 @@ import { ResponsiveSizeConst } from "../constants/ResponsiveSizeConst";
 import { ResponsiveFontSizeNumberConst } from "../constants/ResponsiveFontSizeConst";
 
 const responsiveFontSizeWeights = {
-    MOBILE: 1 / 2,
+    MOBILE: 1 / 1.2,
     TABLET: 1 / 1.2,
     DESKTOP: 1
 };

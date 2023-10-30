@@ -22,8 +22,8 @@ const InfoSection = (): JSX.Element => {
     if (isMobileScreen) {
         cardSizeInfo = {
             learnMore: { height: "50%", width: "100%" },
-            taste: { height: "30%", width: "48%" },
-            developer: { height: "30%", width: "48%" },
+            taste: { height: "calc(35vh + 40vw)", width: "48%" },
+            developer: { height: "calc(35vh + 40vw)", width: "48%" },
             artist: { height: "20%", width: "100%" },
             music: { height: "20%", width: "100%" },
             tag: { height: "20%", width: "100%" },
@@ -31,8 +31,8 @@ const InfoSection = (): JSX.Element => {
     } else if (isTabletScreen) {
         cardSizeInfo = {
             learnMore: { height: "50%", width: "100%" },
-            taste: { height: "30%", width: "48%" },
-            developer: { height: "30%", width: "48%" },
+            taste: { height: "calc(35vh + 40vw)", width: "48%" },
+            developer: { height: "calc(35vh + 40vw)", width: "48%" },
             artist: { height: "60%", width: "30%" },
             music: { height: "60%", width: "30%" },
             tag: { height: "60%", width: "30%" },
