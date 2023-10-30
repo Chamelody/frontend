@@ -1,7 +1,10 @@
 import React from "react";
+import IntroSection from "./IntroSection";
 
 const MainIntro = (): JSX.Element => {
-    return <></>;
+  return (
+      <IntroSection></IntroSection>
+  );
 };
 
 export default MainIntro;
