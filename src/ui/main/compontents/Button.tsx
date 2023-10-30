@@ -18,8 +18,8 @@ const Button = ({content, img_file, size = 16} : ButtonProps): JSX.Element => {
         {...{
             backgroundColor: '#323232',
             padding: '10px 16px',
-            borderRadius: '100px'
-
+            borderRadius: '100px',
+            margin: '10px'
         }}
     >
        
@@ -27,7 +27,7 @@ const Button = ({content, img_file, size = 16} : ButtonProps): JSX.Element => {
             style={{
                 fontSize: {size}+"px",
                 color: "white",
-                margin: '0',
+                margin: 0,
                 fontWeight: 500
             }}
             >
