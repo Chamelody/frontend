@@ -13,7 +13,8 @@
 
     /* Completeness */
     "skipLibCheck": true,
-    "jsx": "react"
+    "jsx": "react",
+    "typeRoots": ["./node_modules/@types", "src"]
   },
-  "include": ["src"]
+  "include": ["src", "src/svg.d.ts"]
 }
