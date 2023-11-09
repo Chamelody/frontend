@@ -69,7 +69,7 @@ const Content = ({
                 <DivideItem ratio={componentLayoutInfo.Button}>
                     <DivideContainer direction="row" width="100%" height="100%">
                         <DivideItem ratio={componentLayoutInfo.ButtonLayout[0]}></DivideItem>
-                        <DivideItem ratio={componentLayoutInfo.ButtonLayout[1]}><Button content="Try it for free" img_file={btn_img} size={24}/></DivideItem>
+                        <DivideItem ratio={componentLayoutInfo.ButtonLayout[1]}><Button content="Try it for free" img_file={btn_img} size={17} to="/home"/></DivideItem>
                         <DivideItem ratio={componentLayoutInfo.ButtonLayout[2]}></DivideItem>
                     </DivideContainer>
     

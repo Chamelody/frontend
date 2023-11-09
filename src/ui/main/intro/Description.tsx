@@ -20,7 +20,7 @@ const Description = (): JSX.Element => {
   });
 
   const fontSizes = {
-    mobile: 26,
+    mobile: 16,
     tablet: 17,
     default: 17,
   };
