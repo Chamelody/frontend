@@ -1,0 +1,178 @@
+{
+    "emojiCategories": [
+        {
+            "category": "face-smiling",
+            "subcategories": [
+                {
+                    "unicode": "1F600",
+                    "name": "grinning-face",
+                    "description": "활짝 웃는 얼굴",
+                    "emotag": "happy"
+                },
+                {
+                    "unicode": "1F603",
+                    "name": "grinning-face-with-big-eyes",
+                    "description": "눈을 크게 뜨고 웃는 얼굴",
+                    "emotag": "happy"
+                },
+                {
+                    "unicode": "1F604",
+                    "name": "grinning-face-with-smiling-eyes",
+                    "description": "미소 짓는 눈으로 활짝 웃는 얼굴",
+                    "emotag": "happy"
+                },
+                {
+                    "unicode": "1F601",
+                    "name": "beaming-face-with-smiling-eyes",
+                    "description": "치아가 보이는 웃는 얼굴",
+                    "emotag": "happy"
+                },
+                {
+                    "unicode": "1F606",
+                    "name": "grinning-squinting face",
+                    "description": "치아가 보이는 웃는 얼굴",
+                    "emotag": "happy"
+                }
+            ]
+        },
+        {
+            "category": "face-affection",
+            "subcategories": [
+                {
+                    "unicode": "1F970",
+                    "name": "smiling-face-with-hearts",
+                    "description": "즐거워하는 얼굴",
+                    "emotag": "love"
+                },
+                {
+                    "unicode": "1F60D",
+                    "name": "smiling-face-with-heart-eyes",
+                    "description": "사랑에 빠진 얼굴",
+                    "emotag": "love"
+                },
+                {
+                    "unicode": "1F618",
+                    "name": "face-blowing-a-kiss",
+                    "description": "뽀뽀하는 얼굴",
+                    "emotag": "love"
+                }
+            ]
+        },
+        {
+            "category": "face-unwell",
+            "subcategories": [
+                {
+                    "unicode": "1F92E",
+                    "name": "face-vomiting",
+                    "description": "토하는 얼굴",
+                    "emotag": "disgust"
+                },
+                {
+                    "unicode": "1F922",
+                    "name": "nauseated-face",
+                    "description": "메스꺼운 얼굴",
+                    "emotag": "disgust"
+                },
+                {
+                    "unicode": "1F975",
+                    "name": "hot-face",
+                    "description": "더운 얼굴",
+                    "emotag": "hot"
+                },
+                {
+                    "unicode": "1F976",
+                    "name": "cold-face",
+                    "description": "추운 얼굴",
+                    "emotag": "hot"
+                }
+            ]
+        },
+        {
+            "category": "face-concerned",
+            "subcategories": [
+                {
+                    "unicode": "1F615",
+                    "name": "confused-face",
+                    "description": "걱정하는 얼굴",
+                    "emotag": "concern"
+                },
+                {
+                    "unicode": "1F61F",
+                    "name": "worried-face",
+                    "description": "걱정하는 얼굴",
+                    "emotag": "concern"
+                },
+                {
+                    "unicode": "1F632",
+                    "name": "astonished-face",
+                    "description": "놀란 얼굴",
+                    "emotag": "fear"
+                },
+                {
+                    "unicode": "1F628",
+                    "name": "fearful-face",
+                    "description": "두려운 얼굴",
+                    "emotag": "fear"
+                },
+                {
+                    "unicode": "1F631",
+                    "name": "face-screaming-in-fear",
+                    "description": "무서워서 비명을 지르는 얼굴",
+                    "emotag": "fear"
+                }
+            ]
+        },
+        {
+            "category": "face-negative",
+            "subcategories": [
+                {
+                    "unicode": "1F624",
+                    "name": "face-with-steam-from-nose",
+                    "description": "씩씩거리는 얼굴",
+                    "emotag": "angry"
+                },
+                {
+                    "unicode": "1F621",
+                    "name": "enraged-face",
+                    "description": "성난 얼굴",
+                    "emotag": "angry"
+                },
+                {
+                    "unicode": "1F92C",
+                    "name": "face-with-symbols-on-mouth",
+                    "description": "욕하는 얼굴",
+                    "emotag": "angry"
+                }
+            ]
+        },
+        {
+            "category": "face-special",
+            "subcategories": [
+                {
+                    "unicode": "1F973",
+                    "name": "partying-face",
+                    "description": "파티하는 얼굴",
+                    "emotag": "party"
+                },
+                {
+                    "unicode": "1F60E",
+                    "name": "smiling-face-with-sunglasses",
+                    "description": "선글라스트를 쓰고 웃는 얼굴",
+                    "emotag": "sunglasses"
+                },
+                {
+                    "unicode": "1F929",
+                    "name": "star-struck",
+                    "description": "하버드에 합격하는 얼굴",
+                    "emotag": "star"
+                },
+                {
+                    "unicode": "1F911",
+                    "name": "money-mouth-face",
+                    "description": "돈 모양의 입이 있는 얼굴",
+                    "emotag": "money"
+                }
+            ]
+        }
+    ]
+}

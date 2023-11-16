@@ -29,9 +29,9 @@ const HomeSection = (): JSX.Element => {
         }
     } else if (isMobileScreen) {    // Mobile Screen
         layout = {
-            InputTag: { height: "38%", width: "100%" },
+            InputTag: { height: "45%", width: "100%" },
             ButtonField: { height: "10%", width: "100%" },
-            EmojiField: { height: "52%", width: "100%" }
+            EmojiField: { height: "45%", width: "100%" }
         }
     } else {                        // Desktop Screen
         layout = {

@@ -5,12 +5,12 @@ type InputTagProps = {
     width: string       // <width> 
 }
 const InputTag = ({
-    height, 
+    height,
     width
 }: InputTagProps): JSX.Element => {
     return <div
         style={{
-            backgroundColor:'pink',
+            backgroundColor: 'pink',
             width: width,
             height: height
         }}

@@ -1,0 +1,25 @@
+/* Add this style to your stylesheet */
+.custom-scrollbar {
+    overflow-y: scroll;
+    /* Add a vertical scrollbar */
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #ff0000 #161616;
+    /* For Firefox */
+
+    /* For WebKit browsers like Chrome and Safari */
+    ::-webkit-scrollbar {
+        width: 12px;
+        /* Set the width of the scrollbar */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #ff0000;
+        /* Set the color of the thumb */
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: #161616;
+        /* Set the color of the track */
+    }
+}

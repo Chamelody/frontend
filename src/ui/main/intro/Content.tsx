@@ -8,8 +8,8 @@ import { useMediaQuery } from "react-responsive";
 import { ResponsiveSizeConst } from "../../../constants/ResponsiveSizeConst";
 
 type ContentProps = {
-    height: string  // <length>
-    width: string   // <length> 
+    height: string  // <height>
+    width: string   // <width> 
 }
 const Content = ({
     height,
