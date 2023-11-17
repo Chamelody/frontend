@@ -71,4 +71,3 @@ export function getRandomSize() {
     return sizes[sizes.length - 1];
 }
 
-

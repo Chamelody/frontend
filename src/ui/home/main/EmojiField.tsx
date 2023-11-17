@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import EmojiData from "../emoji/EmoInfo.json";
 import { selectRandomEmojis, getRandomSize, getGridValue } from "../emoji/EmojiUtils";
 import EmojiItem from "../emoji/EmojiItem";
+import ArrowIcon from "../images/arrow_down.png"
 
 interface EmojiFieldProps {
     height: string;
@@ -100,7 +101,7 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
                 style={buttonStyle}
                 onClick={handleScrollButtonClick}
             >
-                Scroll Down
+                <img src={ArrowIcon} style={{ height: "14px" }} />
             </button>
         </div>
     );
