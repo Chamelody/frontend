@@ -14,7 +14,9 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
     const [randomEmojis, setRandomEmojis] = useState(() => selectRandomEmojis(EmojiData, 27));
     const [emojiItemSizes, setEmojiItemSizes] = useState(() => getRandomSizeList(27));
     const contentRef = useRef<HTMLDivElement | null>(null);
-    const [selectedEmoji, setSelectedEmoji] = useState<string | null>(null);
+    const [selectedStartEmoji, setSelectedStartEmoji] = useState<string | null>(null);
+    const [selectedTargetEmoji, setSelectedTargetEmoji] = useState<string | null>(null);
+    const [selectedEmojis, setSelectedEmojis] = useState<string[]>([]);
 
     useEffect(() => {
         // Scroll to the top when the component mounts
@@ -24,8 +26,39 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
     }, []);
 
     const handleEmojiItemClick = (emoji: Emoji) => {
-        setSelectedEmoji(emoji.unicode);
+        // console.log(`click! ${selectedEmojis}`)
+        if (selectedEmojis.includes(emoji.unicode)) {
+            if (emoji.unicode === selectedStartEmoji) {
+                setSelectedStartEmoji(null);
+                setSelectedEmojis((prevSelectedEmojis) =>
+                    prevSelectedEmojis.filter((e) => e !== emoji.unicode)
+                );
+            } else if (emoji.unicode === selectedTargetEmoji) {
+                setSelectedTargetEmoji(null);
+                setSelectedEmojis((prevSelectedEmojis) =>
+                    prevSelectedEmojis.filter((e) => e !== emoji.unicode)
+                );
+            }
+        }
+        else {
+            if ((selectedStartEmoji && selectedTargetEmoji)) {
+                return;
+            }
+            if (!selectedStartEmoji) {
+                setSelectedStartEmoji(emoji.unicode);
+                setSelectedEmojis([emoji.unicode]);
+            } else if (!selectedTargetEmoji && emoji.unicode !== selectedStartEmoji) {
+                // If start emoji is selected, and the clicked emoji is not the same as start emoji, select target emoji
+                setSelectedTargetEmoji(emoji.unicode);
+                setSelectedEmojis([selectedStartEmoji, emoji.unicode]);
+            }
+
+        }
     };
+
+
+
+
 
     const handleScrollButtonClick = () => {
         if (contentRef.current) {
@@ -100,6 +133,7 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
                                 emoji={emoji}
                                 size={itemSize}
                                 onClick={() => handleEmojiItemClick(emoji)}
+                                isSelected={selectedEmojis.includes(emoji.unicode)}
                             />
                         </div>
                     );
@@ -109,10 +143,15 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
                 <img src={ArrowIcon} style={{ height: "14px" }} />
             </button>
 
-            {/* Display the selected emoji's unicode */}
-            {selectedEmoji && (
+            {/* Display the selected emojis' unicode */}
+            {selectedStartEmoji && (
                 <div style={{ color: "white", textAlign: "center", marginTop: "10px" }}>
-                    Selected Emoji: {selectedEmoji}
+                    Selected Start Emoji: {selectedStartEmoji}
+                </div>
+            )}
+            {selectedTargetEmoji && (
+                <div style={{ color: "white", textAlign: "center", marginTop: "10px" }}>
+                    Selected Target Emoji: {selectedTargetEmoji}
                 </div>
             )}
         </div>

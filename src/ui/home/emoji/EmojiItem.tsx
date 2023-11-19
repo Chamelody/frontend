@@ -6,12 +6,11 @@ interface EmojiItemProps {
     emoji: Emoji;
     size: string;
     onClick: (emoji: Emoji) => void;
+    isSelected: boolean;
 }
 
-
-const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size, onClick }) => {
+const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size, onClick, isSelected }) => {
     const [isHovered, setIsHovered] = useState(false);
-    const [isSelected, setIsSelected] = useState(false);
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -19,11 +18,6 @@ const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size, onClick }) => {
 
     const handleMouseLeave = () => {
         setIsHovered(false);
-    };
-
-    const handleClick = () => {
-        setIsSelected(!isSelected);
-        onClick(emoji);
     };
 
     const containerStyle: React.CSSProperties = {
@@ -48,6 +42,10 @@ const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size, onClick }) => {
     const imgStyle: React.CSSProperties = {
         width: "100%",
         filter: isSelected ? "grayscale(100%)" : "none", // Apply grayscale filter if selected
+    };
+
+    const handleClick = () => {
+        onClick(emoji);
     };
 
     return (
