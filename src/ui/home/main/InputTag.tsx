@@ -104,8 +104,6 @@ const InputTag = ({
                         style={{
                             width: "100%",
                             height: "100%",
-
-                            //backgroundColor: "yellow",
                         }}>
                         <Description />
                     </div>

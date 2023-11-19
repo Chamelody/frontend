@@ -1,21 +1,17 @@
 import React, { useState } from "react";
+import { Emoji } from "./EmojiTypes";
 import { EmojiPath } from "../emoji/EmojiPath";
-import { getRandomSize } from "../emoji/EmojiUtils";
-
-interface Emoji {
-    unicode: string;
-    name: string;
-    description: string;
-    emotag: string;
-}
 
 interface EmojiItemProps {
     emoji: Emoji;
     size: string;
+    onClick: (emoji: Emoji) => void;
 }
 
-const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size }) => {
+
+const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size, onClick }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const [isSelected, setIsSelected] = useState(false);
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -23,6 +19,11 @@ const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size }) => {
 
     const handleMouseLeave = () => {
         setIsHovered(false);
+    };
+
+    const handleClick = () => {
+        setIsSelected(!isSelected);
+        onClick(emoji);
     };
 
     const containerStyle: React.CSSProperties = {
@@ -33,7 +34,7 @@ const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size }) => {
 
     const tagStyle: React.CSSProperties = {
         padding: "10px 16px",
-        backgroundColor: isHovered ? "#656565" : "#454545",
+        backgroundColor: isSelected ? "#656565" : isHovered ? "#656565" : "#454545",
         borderRadius: "50px",
         fontSize: "1.4em",
         fontFamily: "Roboto",
@@ -44,10 +45,16 @@ const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size }) => {
         alignItems: "center",
     };
 
+    const imgStyle: React.CSSProperties = {
+        width: "100%",
+        filter: isSelected ? "grayscale(100%)" : "none", // Apply grayscale filter if selected
+    };
+
     return (
         <div
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={handleClick}
             style={containerStyle}
         >
             {size === "tag" ? (
@@ -57,8 +64,8 @@ const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size }) => {
             ) : (
                 <img
                     src={EmojiPath[emoji.unicode]}
-                    width="100%"
                     alt={emoji.unicode}
+                    style={imgStyle}
                 />
             )}
         </div>

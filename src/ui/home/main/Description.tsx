@@ -21,7 +21,7 @@ const Description = (): JSX.Element => {
     const fontSizes = {
         mobile: 16,
         tablet: 17,
-        default: 17,
+        default: 14,
     };
 
     const getFontSize = () => {

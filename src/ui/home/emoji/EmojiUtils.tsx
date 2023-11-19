@@ -1,13 +1,6 @@
 import React from "react";
-// EmojiUtils.ts
+import { Emoji } from "./EmojiTypes";
 import EmojiData from "../emoji/EmoInfo.json";
-
-interface Emoji {
-    unicode: string;
-    name: string;
-    description: string;
-    emotag: string;
-}
 
 interface EmojiCategory {
     category: string;
@@ -54,20 +47,24 @@ export function getGridValue(size: string) {
     }
 }
 
-export function getRandomSize() {
+export function getRandomSizeList(count: number) {
     const sizes = ["small", "mid", "large", "tag"];
     const weights = [4, 1, 1, 1];
     const totalWeight = weights.reduce((acc, weight) => acc + weight, 0);
-    const randomValue = Math.random() * totalWeight;
+    const randomSizes: string[] = [];
 
-    let cumulativeWeight = 0;
-    for (let i = 0; i < sizes.length; i++) {
-        cumulativeWeight += weights[i];
-        if (randomValue < cumulativeWeight) {
-            return sizes[i];
+    for (let j = 0; j < count; j++) {
+        const randomValue = Math.random() * totalWeight;
+        let cumulativeWeight = 0;
+
+        for (let i = 0; i < sizes.length; i++) {
+            cumulativeWeight += weights[i];
+            if (randomValue < cumulativeWeight) {
+                randomSizes.push(sizes[i]);
+                break;
+            }
         }
     }
 
-    return sizes[sizes.length - 1];
+    return randomSizes;
 }
-

@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import EmojiData from "../emoji/EmoInfo.json";
-import { selectRandomEmojis, getRandomSize, getGridValue } from "../emoji/EmojiUtils";
+import { Emoji } from "../emoji/EmojiTypes";
+import { selectRandomEmojis, getRandomSizeList, getGridValue } from "../emoji/EmojiUtils";
 import EmojiItem from "../emoji/EmojiItem";
-import ArrowIcon from "../images/arrow_down.png"
+import ArrowIcon from "../images/arrow_down.png";
 
 interface EmojiFieldProps {
     height: string;
@@ -10,8 +11,10 @@ interface EmojiFieldProps {
 }
 
 const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
-    const randomEmojis = selectRandomEmojis(EmojiData, 27);
+    const [randomEmojis, setRandomEmojis] = useState(() => selectRandomEmojis(EmojiData, 27));
+    const [emojiItemSizes, setEmojiItemSizes] = useState(() => getRandomSizeList(27));
     const contentRef = useRef<HTMLDivElement | null>(null);
+    const [selectedEmoji, setSelectedEmoji] = useState<string | null>(null);
 
     useEffect(() => {
         // Scroll to the top when the component mounts
@@ -19,6 +22,10 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
             contentRef.current.scrollTop = 0;
         }
     }, []);
+
+    const handleEmojiItemClick = (emoji: Emoji) => {
+        setSelectedEmoji(emoji.unicode);
+    };
 
     const handleScrollButtonClick = () => {
         if (contentRef.current) {
@@ -52,18 +59,17 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
         gridAutoFlow: "dense",
         gap: "0.2rem",
         padding: "10px 10px 40px 10px",
-        overflow: "hidden", // "auto" to enable scrolling in this area
+        overflow: "hidden",
         position: "relative",
     };
 
     const gridStyle = (size: string): React.CSSProperties => ({
-        // backgroundColor: "yellow",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         gridColumn: getGridValue(size).gridColumn,
         gridRow: getGridValue(size).gridRow,
-        boxSizing: "border-box"
+        boxSizing: "border-box",
     });
 
     const buttonStyle: React.CSSProperties = {
@@ -76,33 +82,39 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
         color: "white",
         padding: "12px",
         border: "none",
-        // borderRadius: "8px",
         cursor: "pointer",
     };
-
 
     return (
         <div style={ContainerStyle}>
             <div ref={contentRef} style={gridContainerStyle}>
                 {randomEmojis.map((emoji, index) => {
-                    const size = getRandomSize();
+                    const itemSize = emojiItemSizes[index];
                     return (
                         <div
                             key={index}
-                            className={`size-${size} custom-scrollbar`}
-                            style={gridStyle(size)}
+                            className={`size-${itemSize} custom-scrollbar`}
+                            style={gridStyle(itemSize)}
                         >
-                            <EmojiItem emoji={emoji} size={size} />
+                            <EmojiItem
+                                emoji={emoji}
+                                size={itemSize}
+                                onClick={() => handleEmojiItemClick(emoji)}
+                            />
                         </div>
                     );
                 })}
             </div>
-            <button
-                style={buttonStyle}
-                onClick={handleScrollButtonClick}
-            >
+            <button style={buttonStyle} onClick={handleScrollButtonClick}>
                 <img src={ArrowIcon} style={{ height: "14px" }} />
             </button>
+
+            {/* Display the selected emoji's unicode */}
+            {selectedEmoji && (
+                <div style={{ color: "white", textAlign: "center", marginTop: "10px" }}>
+                    Selected Emoji: {selectedEmoji}
+                </div>
+            )}
         </div>
     );
 };
