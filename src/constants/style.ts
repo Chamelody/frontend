@@ -8,14 +8,17 @@ const palette = {
     lightgray: "#e8e9ec"
 }
 
-const basePath = "../assets/";
-
 const icons = {
-    logo: require(`${basePath}logo.png`),
+    logo: require("../assets/logo.png"),
+    arrowDown: require("../assets/arrow_down.png"),
+    arrowUp: require("../assets/arrow_up.png"),
+    running: require("../assets/running.png"),
+    runningShoes: require("../assets/runningShoes.png"),
+    headset: require("../assets/headset.png"),
 }
 
 const images = {
 
 }
 
-export {palette, icons, images};
+export { palette, icons, images };

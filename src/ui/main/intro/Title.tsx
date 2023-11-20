@@ -35,8 +35,7 @@ const Title = (): JSX.Element => {
           <WordBlock content={icons.logo} mode="image" />
         </FlexContainer>
 
-        <FlexContainer flexWrap="wrap"
-          alignItems="center"
+        <FlexContainer flexWrap="wrap" alignItems="center"
           {...flexContainerStyles}>
           <WordBlock content={("# Chamelody")} mode="filled" color="#2EC364" />
           <WordBlock content={"playlist"} mode="default" />

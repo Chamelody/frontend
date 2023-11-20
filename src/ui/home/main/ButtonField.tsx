@@ -3,7 +3,7 @@ import { DivideContainer, DivideItem } from "../../../components/Divider";
 import { useMediaQuery } from "react-responsive";
 import { ResponsiveSizeConst } from "../../../constants/ResponsiveSizeConst";
 import Button from "../../main/compontents/Button";
-import btn_img from '../../../assets/call_made.png'
+import { icons } from "../../../constants/style";
 
 type ButtonFieldProps = {
     height: string      // <height>
@@ -55,7 +55,7 @@ const ButtonField = ({
                 <DivideContainer direction="row" width="100%" height="100%">
                     <DivideItem ratio={componentLayoutInfo.ButtonLayout[0]}></DivideItem>
                     <DivideItem ratio={componentLayoutInfo.ButtonLayout[1]}>
-                        <Button content="Go to playlist" img_file={btn_img} size={1} to="/playlist" /></DivideItem>
+                        <Button content="Go to playlist" img_file={icons.headset} size={18} to="/playlist" /></DivideItem>
                     <DivideItem ratio={componentLayoutInfo.ButtonLayout[2]}></DivideItem>
                 </DivideContainer>
 

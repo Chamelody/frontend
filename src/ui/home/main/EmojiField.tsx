@@ -3,7 +3,7 @@ import EmojiData from "../emoji/EmoInfo.json";
 import { Emoji } from "../emoji/EmojiTypes";
 import { selectRandomEmojis, getRandomSizeList, getGridValue } from "../emoji/EmojiUtils";
 import EmojiItem from "../emoji/EmojiItem";
-import ArrowIcon from "../../../assets/arrow_up.png";
+import { icons } from "../../../constants/style";
 
 interface EmojiFieldProps {
     height: string;
@@ -143,7 +143,7 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width, onSelectStartEmo
                 })}
             </div>
             <button style={buttonStyle} onClick={handleScrollButtonClick}>
-                <img src={ArrowIcon} style={{ height: "14px" }} />
+                <img src={icons.arrowDown} style={{ height: "14px" }} />
             </button>
 
             {/* Display the selected emojis' unicode */}

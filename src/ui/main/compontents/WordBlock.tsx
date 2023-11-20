@@ -2,6 +2,7 @@ import React from 'react';
 import { EmojiPath } from '../../home/emoji/EmojiPath';
 import { useMediaQuery } from 'react-responsive';
 import { ResponsiveSizeConst } from '../../../constants/ResponsiveSizeConst';
+import { palette } from '../../../constants/style';
 
 type WordBlockProps = {
   content: string;
@@ -10,7 +11,7 @@ type WordBlockProps = {
   emo?: string | null;
 };
 
-const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = 'white', emo = null }) => {
+const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = palette.white, emo = null }) => {
   const isMobileScreen = useMediaQuery({
     maxWidth: ResponsiveSizeConst.MOBILE_SCREEN_MAX_WIDTH
   });
@@ -22,15 +23,22 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = 'white', e
 
   const fontSizes = {
     mobile: "6vw",
-    tablet: "5vw",
-    default: "3.4vw",
+    tablet: "4.2vw",
+    default: "3.2vw",
   };
 
   const imageSizes = {
-    mobile: "8vw",
-    tablet: "8.2vw",
-    default: "6vw",
+    mobile: "7.2vw",
+    tablet: "8vw",
+    default: "5.2vw",
   };
+
+  const emotagSizes = {
+    mobile: "7.4vw",
+    tablet: "6vw",
+    default: "4.2vw",
+
+  }
 
   const getFontSize = () => {
     if (isMobileScreen) {
@@ -52,7 +60,17 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = 'white', e
     }
   };
 
-  const getResponsiveText = (content: string, color: string = "white", fontWeight: number = 800) => {
+  const getEmotagSize = () => {
+    if (isMobileScreen) {
+      return emotagSizes.mobile;
+    } else if (isTabletScreen) {
+      return emotagSizes.tablet;
+    } else {
+      return emotagSizes.default;
+    }
+  };
+
+  const getResponsiveText = (content: string, color: string = palette.white, fontWeight: number = 800) => {
     return <p
       style={{
         fontSize: getFontSize(),
@@ -68,7 +86,7 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = 'white', e
   };
 
 
-  const linedHighlight = (content: string, color: string = "white") => (
+  const linedHighlight = (content: string, color: string = palette.white) => (
     <div
       style={{
         padding: isMobileScreen ? "10px" : "15px",
@@ -81,27 +99,29 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = 'white', e
   );
 
 
-  const filledHighlight = (content: string, color: string = "white") => (
+  const filledHighlight = (content: string, color: string = palette.white) => (
     <div
       style={{
         height: 'auto',
         padding: isMobileScreen ? "10px" : "15px",
         borderRadius: '100px',
-        backgroundColor: "white"
+        backgroundColor: palette.white
       }}
     >
       {getResponsiveText(content, color, 900)}
     </div>
   );
 
-  const tagHighlight = (content: string, color: string = "white", emo: string | null) => (
+  const tagHighlight = (content: string, color: string = palette.white, emo: string | null) => (
     <div
       style={{
         display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         height: 'auto',
-        padding: isMobileScreen ? "10px" : "15px",
+        padding: emo ? "8px 18px" : "16px 24px",
         borderRadius: '100px',
-        backgroundColor: "white"
+        backgroundColor: palette.white
       }}
     >
       {getResponsiveText(content, color, 900)}
@@ -110,16 +130,14 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = 'white', e
         alt={emo}
         style={{
           marginLeft: "10px",
-          // maxWidth: "24px", 
-          // maxHeight: "24px",
-          width: getFontSize(),
-          height: getFontSize(),
-
+          width: getEmotagSize(),
+          height: getEmotagSize(),
+          // backgroundColor: "red"
         }} />}
     </div>
   );
 
-  const defaultHighlight = (content: string, color: string = "white") => (
+  const defaultHighlight = (content: string, color: string = palette.white) => (
     <div
       style={{
         height: 'auto',
@@ -131,12 +149,24 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = 'white', e
   );
 
   const imageBlock = (content: string) => (
-    <img src={content} alt='img' style={{
-      width: getImageSize(), height: getImageSize(),
-      margin: 'auto'
-    }} />
-
-  )
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100%',
+      }}
+    >
+      <img
+        src={content}
+        alt='img'
+        style={{
+          width: getImageSize(),
+          height: getImageSize(),
+        }}
+      />
+    </div>
+  );
 
   return (
     <div className={`word-block ${mode}`}>

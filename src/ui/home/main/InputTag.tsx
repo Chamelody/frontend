@@ -81,12 +81,12 @@ const InputTag = ({
                                 }}
                             >
                                 <FlexContainer flexWrap="wrap" alignContent="flex-start">
-                                    <FlexContainer flexWrap="wrap" {...flexContainerStyles}>
+                                    <FlexContainer flexWrap="wrap" alignItems="center"  {...flexContainerStyles}>
                                         <WordBlock content={"I want to"} mode="default" />
                                         <WordBlock content={"Chamelody"} mode="lined" />
                                     </FlexContainer>
                                 </FlexContainer>
-                                <FlexContainer flexWrap="wrap" alignContent="flex-start">
+                                <FlexContainer flexWrap="wrap" alignContent="flex-start" >
                                     <FlexContainer flexWrap="wrap" alignItems="center" {...flexContainerStyles}>
                                         <WordBlock content={" from"} mode="default" />
                                         <WordBlock

@@ -2,7 +2,7 @@ import React from "react";
 import Description from "./Description";
 import Title from "./Title";
 import Button from "../compontents/Button";
-import btn_img from '../../../assets/call_made.png'
+import { icons } from "../../../constants/style";
 import { DivideContainer, DivideItem } from "../../../components/Divider";
 import { useMediaQuery } from "react-responsive";
 import { ResponsiveSizeConst } from "../../../constants/ResponsiveSizeConst";
@@ -70,7 +70,7 @@ const Content = ({
                 <DivideItem ratio={componentLayoutInfo.Button}>
                     <DivideContainer direction="row" width="100%" height="100%">
                         <DivideItem ratio={componentLayoutInfo.ButtonLayout[0]}></DivideItem>
-                        <DivideItem ratio={componentLayoutInfo.ButtonLayout[1]}><Button content="Try it for free" img_file={btn_img} size={18} to="/home" /></DivideItem>
+                        <DivideItem ratio={componentLayoutInfo.ButtonLayout[1]}><Button content="Try it for free" img_file={icons.runningShoes} size={18} to="/home" /></DivideItem>
                         <DivideItem ratio={componentLayoutInfo.ButtonLayout[2]}></DivideItem>
                     </DivideContainer>
 
