@@ -2,13 +2,13 @@ import React from "react";
 import mainImageMobile from "./backgrounds/main_mobile.png";
 import mainImageDesktop from "./backgrounds/main_desktop.png";
 import { useMediaQuery } from "react-responsive";
-import WordBlock from "../../compontents/WordBlock";
+import WordBlock from "../../components/WordBlock";
 import ResponsiveSizeConst from "../../../../constants/ResponsiveSizeConst";
 import FlexContainer from "../../../../components/FlexContainer";
 import chamelody_3d from "../../../../assets/chamelody_3d.svg";
 import firework from "../../../../assets/firework.svg";
 import { ResponsiveText } from "../../../../components/ResponsiveText";
-import Button from "../../compontents/Button";
+import Button from "../../components/Button";
 import btn_img from '../../../../assets/call_made.png'
 
 type MainCardProps = {

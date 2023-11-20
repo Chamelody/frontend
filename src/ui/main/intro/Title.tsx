@@ -1,5 +1,5 @@
 import React from "react";
-import WordBlock from "../compontents/WordBlock";
+import WordBlock from "../components/WordBlock";
 import FlexContainer from "../../../components/FlexContainer";
 import { icons } from "../../../constants/style";
 
@@ -18,7 +18,6 @@ const Title = (): JSX.Element => {
       style={{
         height: "auto",
         width: "auto",
-        // backgroundColor: "orange",
         paddingLeft: "50px",
         boxSizing: "border-box",
       }}

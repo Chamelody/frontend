@@ -1,7 +1,7 @@
 import React from "react";
 import Description from "./Description";
 import Title from "./Title";
-import Button from "../compontents/Button";
+import Button from "../components/Button";
 import { icons } from "../../../constants/style";
 import { DivideContainer, DivideItem } from "../../../components/Divider";
 import { useMediaQuery } from "react-responsive";
@@ -35,18 +35,17 @@ const Content = ({
     }
 
     if (isMobileScreen) {
-        componentLayoutInfo = { Space1: 0, Title: 2, Description: 2, Button: 1, ButtonLayout: [1, 2, 1], Space2: 1 };
+        componentLayoutInfo = { Space1: 0, Title: 3, Description: 2, Button: 1, ButtonLayout: [1, 2, 1], Space2: 1 };
     } else if (isTabletScreen) {
-        componentLayoutInfo = { Space1: 1, Title: 4, Description: 2, Button: 1, ButtonLayout: [15, 10, 5], Space2: 0 };
+        componentLayoutInfo = { Space1: 1, Title: 3, Description: 2, Button: 1, ButtonLayout: [15, 10, 5], Space2: 0 };
     } else {
-        componentLayoutInfo = { Space1: 1, Title: 2, Description: 2, Button: 1, ButtonLayout: [15, 10, 5], Space2: 1 };
+        componentLayoutInfo = { Space1: 1, Title: 3, Description: 2, Button: 1, ButtonLayout: [15, 10, 5], Space2: 1 };
     }
 
 
     return (
         <div
             style={{
-                // backgroundColor:'pink',
                 width: width,
                 height: height
             }}

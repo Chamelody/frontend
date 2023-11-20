@@ -1,5 +1,5 @@
 import React from "react";
-import svg_image from '../../../assets/landing_animate.svg'
+import { images } from "../../../constants/style";
 import { useMediaQuery } from "react-responsive";
 import { ResponsiveSizeConst } from "../../../constants/ResponsiveSizeConst";
 import FlexContainer from "../../../components/FlexContainer";
@@ -51,7 +51,7 @@ const LandingImage = ({
                 justifyContent={isTabletScreen ? "flex-end" : "center"}
                 alignItems="center">
                 <img
-                    src={svg_image} alt="gif"
+                    src={images.landing} alt="gif"
                     height={ImageSize.height}
                     width={ImageSize.width}
                 />

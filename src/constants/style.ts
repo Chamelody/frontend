@@ -18,6 +18,7 @@ const icons = {
 }
 
 const images = {
+    landing: require("../assets/landing_animate.svg").default,
 
 }
 

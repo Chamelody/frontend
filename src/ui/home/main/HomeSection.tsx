@@ -64,7 +64,12 @@ const HomeSection = (): JSX.Element => {
                 onSelectStartEmoji={selectedStartEmoji}
                 onSelectTargetEmoji={selectedTargetEmoji}
             />
-            <ButtonField height={layout.ButtonField.height} width={layout.ButtonField.width} />
+            <ButtonField 
+                height={layout.ButtonField.height} 
+                width={layout.ButtonField.width} 
+                onSelectStartEmoji={selectedStartEmoji}
+                onSelectTargetEmoji={selectedTargetEmoji}
+            />
             <EmojiField
                 height={layout.EmojiField.height}
                 width={layout.EmojiField.width}

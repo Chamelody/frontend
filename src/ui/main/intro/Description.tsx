@@ -39,7 +39,6 @@ const Description = (): JSX.Element => {
       style={{
         height: "auto",
         width: "100%",
-        // backgroundColor: "red",
         padding: "0 50px",
         boxSizing: "border-box",
       }}

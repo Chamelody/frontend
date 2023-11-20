@@ -9,6 +9,7 @@ type WordBlockProps = {
   mode: 'lined' | 'filled' | 'default' | 'image' | 'emotag'; // mode prop 추가
   color?: string;
   emo?: string | null;
+  onClick?: () => void;
 };
 
 const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = palette.white, emo = null }) => {
@@ -121,7 +122,8 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = palette.wh
         height: 'auto',
         padding: emo ? "8px 18px" : "16px 24px",
         borderRadius: '100px',
-        backgroundColor: palette.white
+        backgroundColor: palette.white,
+        cursor: 'pointer'
       }}
     >
       {getResponsiveText(content, color, 900)}
