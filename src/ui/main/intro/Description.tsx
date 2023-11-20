@@ -10,7 +10,7 @@ const descriptionTexts = [
 ];
 
 const Description = (): JSX.Element => {
-  const isMobileScreen = useMediaQuery({ 
+  const isMobileScreen = useMediaQuery({
     maxWidth: ResponsiveSizeConst.MOBILE_SCREEN_MAX_WIDTH
   });
 
@@ -20,9 +20,9 @@ const Description = (): JSX.Element => {
   });
 
   const fontSizes = {
-    mobile: 26,
-    tablet: 17,
-    default: 17,
+    mobile: 12,
+    tablet: 14,
+    default: 14,
   };
 
   const getFontSize = () => {
@@ -35,14 +35,14 @@ const Description = (): JSX.Element => {
     }
   };
   return (
-    <div 
-        style={{
-            height: "auto",
-            width: "100%",
-            // backgroundColor: "red",
-            padding: "0 50px",
-            boxSizing: "border-box",
-        }}
+    <div
+      style={{
+        height: "auto",
+        width: "100%",
+        // backgroundColor: "red",
+        padding: "0 50px",
+        boxSizing: "border-box",
+      }}
     >
       {descriptionTexts.map((text, index) => (
         <ResponsiveText
@@ -50,8 +50,9 @@ const Description = (): JSX.Element => {
           fontSize={getFontSize()}
           color="white"
           fontWeight={300}
-          {...{ 
-            margin: "0px", letterSpacing:'-0.1px', }}
+          {...{
+            margin: "0px", letterSpacing: '-0.1px',
+          }}
         >
           {text}
         </ResponsiveText>

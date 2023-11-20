@@ -48,7 +48,8 @@ const LandingImage = ({
                 <FlexContainer 
                     width="100%"
                     height="100%"
-                    justifyContent= {isTabletScreen ? "flex-end" : "center" } alignItems="center">
+                    justifyContent= {isTabletScreen ? "flex-end" : "center" } 
+                    alignItems="center">
                     <img 
                         src={svg_image} alt="gif" 
                         height={ImageSize.height}
