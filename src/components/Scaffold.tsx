@@ -5,7 +5,9 @@ type ScaffoldProps = {
     height?: string,  // <length>
     width?: string,  // <length>
     minheight?: string,  // <length>
-    minwidth?: string  // <length>
+    minwidth?: string,  // <length>
+    id?: string,
+    className?: string
 }
 
 const scaffoldConstant = {
@@ -20,15 +22,18 @@ const Scaffold: React.FC<ScaffoldProps> = ({
     width = scaffoldConstant.SCREEN_WIDTH,
     minheight = undefined,
     minwidth = scaffoldConstant.SCREEN_MIN_WIDTH,
+    id = undefined,
+    className = undefined,
     ...otherAttributes
 }) => {
     return (
-        <div 
+        <div id={id} className={className}
             style={{
                 height: height,
                 width: width,
                 minHeight: minheight,
                 minWidth: minwidth,
+                overflow: 'auto',
                 ...otherAttributes
             }}
         >

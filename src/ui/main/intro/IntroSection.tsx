@@ -51,7 +51,6 @@ const IntroSection = (): JSX.Element => {
             width="100%" 
             justifyContent="space-between" 
             flexWrap="wrap"
-            {...{backgroundColor: '#2EC364'}}
         >
             {/* layout */}
             {componentOrder.map(component => (

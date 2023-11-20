@@ -2,7 +2,7 @@ import React from "react";
 import Description from "./Description";
 import Title from "./Title";
 import Button from "../compontents/Button";
-import btn_img from './images/call_made.png'
+import btn_img from '../../../assets/call_made.png'
 import { DivideContainer, DivideItem } from "../../../components/Divider";
 import { useMediaQuery } from "react-responsive";
 import { ResponsiveSizeConst } from "../../../constants/ResponsiveSizeConst";
