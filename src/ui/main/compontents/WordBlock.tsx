@@ -52,11 +52,11 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = 'white', e
     }
   };
 
-  const getResponsiveText = (content: string, color: string = "white") => {
+  const getResponsiveText = (content: string, color: string = "white", fontWeight: number = 800) => {
     return <p
       style={{
         fontSize: getFontSize(),
-        fontWeight: 800,
+        fontWeight: fontWeight,
         color: color,
         letterSpacing: '-0.5px',
         marginBottom: '-8px',
@@ -90,7 +90,7 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = 'white', e
         backgroundColor: "white"
       }}
     >
-      {getResponsiveText(content, color)}
+      {getResponsiveText(content, color, 900)}
     </div>
   );
 
@@ -104,7 +104,7 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = 'white', e
         backgroundColor: "white"
       }}
     >
-      {getResponsiveText(content, color)}
+      {getResponsiveText(content, color, 900)}
       {emo && <img
         src={EmojiPath[emo]}
         alt={emo}

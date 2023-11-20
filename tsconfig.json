@@ -9,6 +9,7 @@
     /* Type Checking */
     "strict": true,
     /* Completeness */
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "jsx": "react",
     "typeRoots": [

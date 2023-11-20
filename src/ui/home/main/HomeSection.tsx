@@ -52,7 +52,10 @@ const HomeSection = (): JSX.Element => {
             width="100vw"
             justifyContent="space-between"
             flexWrap="wrap"
-            {...{ backgroundColor: '#2EC364' }}
+            {...{
+                backgroundColor: '#2EC364',
+                overflow: 'hidden'
+            }}
         >
             <InputTag
                 height={layout.InputTag.height}
@@ -67,6 +70,7 @@ const HomeSection = (): JSX.Element => {
                 onSelectStartEmoji={setSelectedStartEmoji}
                 onSelectTargetEmoji={setSelectedTargetEmoji}
             />
+
         </FlexContainer>
     );
 };

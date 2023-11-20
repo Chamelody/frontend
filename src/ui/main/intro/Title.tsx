@@ -7,7 +7,7 @@ const Title = (): JSX.Element => {
   const flexContainerStyles = {
     width: "auto",
     backgroundColor: "rgba(0, 0, 0, 0.1)",
-    borderRadius:  "50px",
+    borderRadius: "50px",
     marginBottom: "8px",
     marginRight: "5px",
     paddingRight: "15px",
@@ -23,21 +23,22 @@ const Title = (): JSX.Element => {
         boxSizing: "border-box",
       }}
     >
-      <FlexContainer flexWrap="wrap"  alignContent="flex-start">
+      <FlexContainer flexWrap="wrap" alignContent="flex-start">
         <FlexContainer flexWrap="wrap" {...flexContainerStyles}>
           <WordBlock content={"Stress-Busting"} mode="default" />
           <WordBlock content={"Beats"} mode="lined" />
         </FlexContainer>
 
-        <FlexContainer flexWrap="wrap" {...flexContainerStyles}>
+        <FlexContainer flexWrap="wrap" alignItems="center"
+          {...flexContainerStyles}>
           <WordBlock content={"with the -"} mode="default" />
           <WordBlock content={logo_img} mode="image" />
         </FlexContainer>
 
-        <FlexContainer flexWrap="wrap" 
+        <FlexContainer flexWrap="wrap"
           alignItems="center"
           {...flexContainerStyles}>
-          <WordBlock content={("# Chamelody")} mode="filled" color="#2EC364"/>
+          <WordBlock content={("# Chamelody")} mode="filled" color="#2EC364" />
           <WordBlock content={"playlist"} mode="default" />
         </FlexContainer>
       </FlexContainer>
