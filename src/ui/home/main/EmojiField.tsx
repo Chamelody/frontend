@@ -3,7 +3,7 @@ import EmojiData from "../emoji/EmoInfo.json";
 import { Emoji } from "../emoji/EmojiTypes";
 import { selectRandomEmojis, getRandomSizeList, getGridValue } from "../emoji/EmojiUtils";
 import EmojiItem from "../emoji/EmojiItem";
-import ArrowIcon from "../images/arrow_down.png";
+import ArrowIcon from "../../../assets/arrow_up.png";
 
 interface EmojiFieldProps {
     height: string;
@@ -61,9 +61,6 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width, onSelectStartEmo
 
         }
     };
-
-
-
 
 
     const handleScrollButtonClick = () => {

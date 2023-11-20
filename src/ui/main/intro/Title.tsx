@@ -1,7 +1,7 @@
 import React from "react";
 import WordBlock from "../compontents/WordBlock";
 import FlexContainer from "../../../components/FlexContainer";
-import logo_img from './images/logo.png'
+import { icons } from "../../../constants/style";
 
 const Title = (): JSX.Element => {
   const flexContainerStyles = {
@@ -32,7 +32,7 @@ const Title = (): JSX.Element => {
         <FlexContainer flexWrap="wrap" alignItems="center"
           {...flexContainerStyles}>
           <WordBlock content={"with the -"} mode="default" />
-          <WordBlock content={logo_img} mode="image" />
+          <WordBlock content={icons.logo} mode="image" />
         </FlexContainer>
 
         <FlexContainer flexWrap="wrap"
