@@ -8,9 +8,11 @@ import ArrowIcon from "../images/arrow_down.png";
 interface EmojiFieldProps {
     height: string;
     width: string;
+    onSelectStartEmoji: (emoji: Emoji | null) => void;
+    onSelectTargetEmoji: (emoji: Emoji | null) => void;
 }
 
-const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
+const EmojiField: React.FC<EmojiFieldProps> = ({ height, width, onSelectStartEmoji, onSelectTargetEmoji }) => {
     const [randomEmojis, setRandomEmojis] = useState(() => selectRandomEmojis(EmojiData, 27));
     const [emojiItemSizes, setEmojiItemSizes] = useState(() => getRandomSizeList(27));
     const contentRef = useRef<HTMLDivElement | null>(null);
@@ -30,11 +32,13 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
         if (selectedEmojis.includes(emoji.unicode)) {
             if (emoji.unicode === selectedStartEmoji) {
                 setSelectedStartEmoji(null);
+                onSelectStartEmoji(null);
                 setSelectedEmojis((prevSelectedEmojis) =>
                     prevSelectedEmojis.filter((e) => e !== emoji.unicode)
                 );
             } else if (emoji.unicode === selectedTargetEmoji) {
                 setSelectedTargetEmoji(null);
+                onSelectTargetEmoji(null);
                 setSelectedEmojis((prevSelectedEmojis) =>
                     prevSelectedEmojis.filter((e) => e !== emoji.unicode)
                 );
@@ -46,10 +50,12 @@ const EmojiField: React.FC<EmojiFieldProps> = ({ height, width }) => {
             }
             if (!selectedStartEmoji) {
                 setSelectedStartEmoji(emoji.unicode);
+                onSelectStartEmoji(emoji);
                 setSelectedEmojis([emoji.unicode]);
             } else if (!selectedTargetEmoji && emoji.unicode !== selectedStartEmoji) {
                 // If start emoji is selected, and the clicked emoji is not the same as start emoji, select target emoji
                 setSelectedTargetEmoji(emoji.unicode);
+                onSelectTargetEmoji(emoji);
                 setSelectedEmojis([selectedStartEmoji, emoji.unicode]);
             }
 

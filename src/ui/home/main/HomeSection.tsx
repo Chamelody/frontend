@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import ResponsiveSizeConst from "../../../constants/ResponsiveSizeConst";
 import FlexContainer from "../../../components/FlexContainer";
 import InputTag from "./InputTag";
 import EmojiField from "./EmojiField";
 import ButtonField from "./ButtonField";
+import { Emoji } from "../emoji/EmojiTypes";
 
 const HomeSection = (): JSX.Element => {
+    const [selectedStartEmoji, setSelectedStartEmoji] = useState<Emoji | null>(null);
+    const [selectedTargetEmoji, setSelectedTargetEmoji] = useState<Emoji | null>(null);
+
+
     const isTabletScreen = useMediaQuery({
         minWidth: ResponsiveSizeConst.TABLET_SCREEN_MIN_WIDTH,
         maxWidth: ResponsiveSizeConst.TABLET_SCREEN_MAX_WIDTH
@@ -49,12 +54,18 @@ const HomeSection = (): JSX.Element => {
             flexWrap="wrap"
             {...{ backgroundColor: '#2EC364' }}
         >
-            <InputTag height={layout.InputTag.height} width={layout.InputTag.width} />
+            <InputTag
+                height={layout.InputTag.height}
+                width={layout.InputTag.width}
+                onSelectStartEmoji={selectedStartEmoji}
+                onSelectTargetEmoji={selectedTargetEmoji}
+            />
             <ButtonField height={layout.ButtonField.height} width={layout.ButtonField.width} />
             <EmojiField
                 height={layout.EmojiField.height}
                 width={layout.EmojiField.width}
-
+                onSelectStartEmoji={setSelectedStartEmoji}
+                onSelectTargetEmoji={setSelectedTargetEmoji}
             />
         </FlexContainer>
     );
