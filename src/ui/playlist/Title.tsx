@@ -48,7 +48,7 @@ const Title = ({
             width: width,
             height: height }}
         >
-            
+            Title Layout
         </div>
        
     );
