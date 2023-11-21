@@ -70,7 +70,7 @@ const ButtonField = ({
                             content="Go to playlist"
                             img_file={icons.headset}
                             size={18}
-                            to={onSelectStartEmoji && onSelectTargetEmoji ? "/playlist" : ""}
+                            to={onSelectStartEmoji && onSelectTargetEmoji ? "/loading" : ""}
                             onClick={() => {
                                 if (onSelectStartEmoji === null || onSelectTargetEmoji === null) {
                                     setShowSweetAlert(true);
@@ -93,7 +93,6 @@ const ButtonField = ({
                     )}
 
                 </DivideContainer>
-
             </DivideItem>
 
             {/*Space Bottom*/}
