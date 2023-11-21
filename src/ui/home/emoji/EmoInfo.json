@@ -42,19 +42,19 @@
                     "unicode": "1F970",
                     "name": "smiling-face-with-hearts",
                     "description": "즐거워하는 얼굴",
-                    "emotag": "love"
+                    "emotag": "vitality"
                 },
                 {
                     "unicode": "1F60D",
                     "name": "smiling-face-with-heart-eyes",
                     "description": "사랑에 빠진 얼굴",
-                    "emotag": "love"
+                    "emotag": "vitality"
                 },
                 {
                     "unicode": "1F618",
                     "name": "face-blowing-a-kiss",
                     "description": "뽀뽀하는 얼굴",
-                    "emotag": "love"
+                    "emotag": "vitality"
                 }
             ]
         },

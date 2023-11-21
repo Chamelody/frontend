@@ -46,9 +46,9 @@ const Description = (): JSX.Element => {
             {descriptionTexts.map((text, index) => (
                 <ResponsiveText
                     key={index}
-                    fontSize={getFontSize()}
+                    fontSize={index === 0 ? getFontSize() + 12 : getFontSize()}
                     color="white"
-                    fontWeight={300}
+                    fontWeight={index === 0 ? 700 : 300}
                     {...{
                         margin: "0px", letterSpacing: '-0.1px',
                     }}
