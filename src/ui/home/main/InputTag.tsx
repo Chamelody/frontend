@@ -4,7 +4,7 @@ import { DivideContainer, DivideItem } from "../../../components/Divider";
 import { useMediaQuery } from "react-responsive";
 import { ResponsiveSizeConst } from "../../../constants/ResponsiveSizeConst";
 import FlexContainer from "../../../components/FlexContainer";
-import WordBlock from "../../main/compontents/WordBlock";
+import WordBlock from "../../main/components/WordBlock";
 import Description from "./Description";
 
 type InputTagProps = {
@@ -18,8 +18,8 @@ const InputTag = ({
     width,
     onSelectStartEmoji,
     onSelectTargetEmoji
-
 }: InputTagProps): JSX.Element => {
+
     const isMobileScreen = useMediaQuery({
         maxWidth: ResponsiveSizeConst.MOBILE_SCREEN_MAX_WIDTH
     });
@@ -60,7 +60,6 @@ const InputTag = ({
                 // backgroundColor: 'pink',
                 width: width,
                 height: height,
-
             }}
         >
             <DivideContainer direction="column" width="100%" height="100%">
@@ -81,18 +80,21 @@ const InputTag = ({
                                 }}
                             >
                                 <FlexContainer flexWrap="wrap" alignContent="flex-start">
-                                    <FlexContainer flexWrap="wrap" {...flexContainerStyles}>
+                                    <FlexContainer flexWrap="wrap" alignItems="center"  {...flexContainerStyles}>
                                         <WordBlock content={"I want to"} mode="default" />
                                         <WordBlock content={"Chamelody"} mode="lined" />
                                     </FlexContainer>
-
+                                </FlexContainer>
+                                <FlexContainer flexWrap="wrap" alignContent="flex-start" >
                                     <FlexContainer flexWrap="wrap" alignItems="center" {...flexContainerStyles}>
                                         <WordBlock content={" from"} mode="default" />
                                         <WordBlock
                                             content={onSelectStartEmoji ? `# ${onSelectStartEmoji.emotag}` : "# currnet mood"}
                                             mode="emotag"
                                             emo={onSelectStartEmoji ? onSelectStartEmoji.unicode : null}
-                                            color="#323232" />
+                                            color="#323232"
+
+                                        />
                                     </FlexContainer>
 
                                     <FlexContainer flexWrap="wrap" alignItems="center" {...flexContainerStyles}>

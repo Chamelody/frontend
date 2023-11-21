@@ -6,6 +6,7 @@ import InputTag from "./InputTag";
 import EmojiField from "./EmojiField";
 import ButtonField from "./ButtonField";
 import { Emoji } from "../emoji/EmojiTypes";
+import { palette } from "../../../constants/style";
 
 const HomeSection = (): JSX.Element => {
     const [selectedStartEmoji, setSelectedStartEmoji] = useState<Emoji | null>(null);
@@ -52,7 +53,10 @@ const HomeSection = (): JSX.Element => {
             width="100vw"
             justifyContent="space-between"
             flexWrap="wrap"
-            {...{ backgroundColor: '#2EC364' }}
+            {...{
+                backgroundColor: palette.green,
+                overflow: 'hidden'
+            }}
         >
             <InputTag
                 height={layout.InputTag.height}
@@ -60,13 +64,19 @@ const HomeSection = (): JSX.Element => {
                 onSelectStartEmoji={selectedStartEmoji}
                 onSelectTargetEmoji={selectedTargetEmoji}
             />
-            <ButtonField height={layout.ButtonField.height} width={layout.ButtonField.width} />
+            <ButtonField 
+                height={layout.ButtonField.height} 
+                width={layout.ButtonField.width} 
+                onSelectStartEmoji={selectedStartEmoji}
+                onSelectTargetEmoji={selectedTargetEmoji}
+            />
             <EmojiField
                 height={layout.EmojiField.height}
                 width={layout.EmojiField.width}
                 onSelectStartEmoji={setSelectedStartEmoji}
                 onSelectTargetEmoji={setSelectedTargetEmoji}
             />
+
         </FlexContainer>
     );
 };
