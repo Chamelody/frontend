@@ -7,7 +7,6 @@ import BackgroundContainer from "../playlist/BackgroundContainer";
 import Description from "./Description";
 import Spacer from "./Spacer";
 
-
 const LoadingSection = (): JSX.Element => {
     const isTabletScreen = useMediaQuery({
         minWidth: ResponsiveSizeConst.TABLET_SCREEN_MIN_WIDTH,
@@ -27,12 +26,26 @@ const LoadingSection = (): JSX.Element => {
                 style={{
                     width: isTabletScreen ? "20vw" : "24vh",
                     height: isTabletScreen ? "20vw" : "24vh",
-                }} />
+                    animation: "spin 8s linear infinite"
+                }}
+            />
 
             <Spacer height="5%" />
             <Description />
-        </FlexContainer >
+        </FlexContainer>
     );
 };
 
-export default LoadingSection;
+const styles = `
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+`;
+
+export default () => (
+    <>
+        <style>{styles}</style>
+        <LoadingSection />
+    </>
+);
