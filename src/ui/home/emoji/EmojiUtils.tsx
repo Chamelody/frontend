@@ -49,7 +49,7 @@ export function getGridValue(size: string) {
 
 export function getRandomSizeList(count: number) {
     const sizes = ["small", "mid", "large", "tag"];
-    const weights = [4, 1, 1, 1];
+    const weights = [4, 2, 1, 5];
     const totalWeight = weights.reduce((acc, weight) => acc + weight, 0);
     const randomSizes: string[] = [];
 

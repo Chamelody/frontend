@@ -57,7 +57,7 @@ const EmojiItem: React.FC<EmojiItemProps> = ({ emoji, size, onClick, isSelected 
         >
             {size === "tag" ? (
                 <div style={tagStyle}>
-                    #{emoji.emotag}
+                    #{emoji.emotag.split('_')[0]}
                 </div>
             ) : (
                 <img
