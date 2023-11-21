@@ -15,6 +15,7 @@ const icons = {
     running: require("../assets/running.png"),
     runningShoes: require("../assets/runningShoes.png"),
     headset: require("../assets/headset.png"),
+    logoLP: require("../assets/logo_LP.png"),
 }
 
 const images = {
