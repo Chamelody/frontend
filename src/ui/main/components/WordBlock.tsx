@@ -134,7 +134,6 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = palette.wh
           marginLeft: "10px",
           width: getEmotagSize(),
           height: getEmotagSize(),
-          // backgroundColor: "red"
         }} />}
     </div>
   );

@@ -1,0 +1,36 @@
+/* PlaylistContent.css */
+
+.custom-scrollbar-container {
+    background-color: rgba(33, 33, 33, 0.2);
+    width: 90%;
+    height: 80%;
+    overflow-y: auto;
+    border-radius: 3vw;
+    padding: 20px 16px 20px 10px;
+    box-sizing: border-box;
+}
+
+.playlist-box {
+    height: 100%;
+    overflow-y: auto;
+
+    /* Webkit (Chrome/Safari/Opera) scrollbar styles */
+    &::-webkit-scrollbar {
+        width: 12px;
+        /* 스크롤바의 너비 */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        height: 20%;
+        /* 스크롤바의 길이 */
+        background: white;
+        /* 스크롤바의 색상 */
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(33, 33, 33, 0.2);
+        border-radius: 10px;
+        /*스크롤바 뒷 배경 색상*/
+    }
+}

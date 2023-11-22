@@ -5,15 +5,22 @@ import { useMediaQuery } from "react-responsive";
 import { ResponsiveSizeConst } from "../../constants/ResponsiveSizeConst";
 
 import Title from "./Title";
+import Option from "./Option";
+import { Emoji } from "../home/emoji/EmojiTypes";
+
 
 type ContentProps = {
     height: string  // <length>
     width: string   // <length> 
+    fromEmoji: Emoji
+    toEmoji: Emoji
 }
 
 const Content = ({
     height,
     width,
+    fromEmoji,
+    toEmoji
 }: ContentProps): JSX.Element => {
     const isMobileScreen = useMediaQuery({
         maxWidth: ResponsiveSizeConst.MOBILE_SCREEN_MAX_WIDTH
@@ -35,18 +42,17 @@ const Content = ({
     }
 
     if (isMobileScreen) {           // Mobile Screen
-        componentLayoutInfo = { SpaceTop: 2, Title: 4, Option: 1, OptionLayout: [1, 2, 1], SpaceBottom: 1 };
+        componentLayoutInfo = { SpaceTop: 4, Title: 6, Option: 2, OptionLayout: [1, 2, 1], SpaceBottom: 1 };
     } else if (isTabletScreen) {    // Tablet Screen 
-        componentLayoutInfo = { SpaceTop: 2, Title: 4, Option: 1, OptionLayout: [15, 10, 5], SpaceBottom: 1 };
+        componentLayoutInfo = { SpaceTop: 4, Title: 6, Option: 2, OptionLayout: [15, 10, 5], SpaceBottom: 1 };
     } else {                        // Desktop Screen
-        componentLayoutInfo = { SpaceTop: 1, Title: 3, Option: 1, OptionLayout: [15, 10, 5], SpaceBottom: 1 };
+        componentLayoutInfo = { SpaceTop: 1, Title: 2, Option: 1, OptionLayout: [15, 10, 5], SpaceBottom: 2 };
     }
 
 
     return (
         <div
             style={{
-                backgroundColor: 'pink',
                 width: width,
                 height: height
             }}
@@ -58,7 +64,7 @@ const Content = ({
 
                 {/*타이틀*/}
                 <DivideItem ratio={componentLayoutInfo.Title}>
-                    <Title />
+                    <Title fromEmoji={fromEmoji} toEmoji={toEmoji} />
                 </DivideItem>
 
                 {/*버튼*/}

@@ -34,8 +34,8 @@ const PlaylistSection = (): JSX.Element => {
         }
     } else if (isMobileScreen) {    // Mobile Screen
         layout = {
-            Content: { height: "45%", width: "100%" },
-            PlaylistContent: { height: "55%", width: "100%" }
+            Content: { height: "42%", width: "100%" },
+            PlaylistContent: { height: "58%", width: "100%" }
         }
     } else {                        // Desktop Screen
         layout = {
@@ -53,7 +53,7 @@ const PlaylistSection = (): JSX.Element => {
             flexWrap="wrap"
         >
             <BackgroundContainer />
-            <Content height={layout.Content.height} width={layout.Content.width} />
+            <Content height={layout.Content.height} width={layout.Content.width} fromEmoji={fromEmoji} toEmoji={toEmoji} />
             <PlaylistContent height={layout.PlaylistContent.height} width={layout.PlaylistContent.width} musicList={location.state.musicList} />
 
         </FlexContainer>
