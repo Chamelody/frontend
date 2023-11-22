@@ -68,14 +68,8 @@ const Content = ({
                 </DivideItem>
 
                 {/*버튼*/}
-                <DivideItem ratio={componentLayoutInfo.Option}
-                    {...{ backgroundColor: 'brown', }}
-                >
-                    <DivideContainer direction="row" width="100%" height="100%">
-                        <DivideItem ratio={componentLayoutInfo.OptionLayout[0]}></DivideItem>
-                        <DivideItem ratio={componentLayoutInfo.OptionLayout[1]}>Hello</DivideItem>
-                        <DivideItem ratio={componentLayoutInfo.OptionLayout[2]}></DivideItem>
-                    </DivideContainer>
+                <DivideItem ratio={componentLayoutInfo.Option}>
+                    <Option />
                 </DivideItem>
 
                 {/*Space*/}

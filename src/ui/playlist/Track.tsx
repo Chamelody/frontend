@@ -34,8 +34,10 @@ const Track = ({ index, imageUrl, name, artists }: TrackProps): JSX.Element => {
         height: "100%",
         fontSize: "10px",
         display: "flex",
+        fontWeight: "800",
         flexDirection: "column",
         justifyContent: "center",
+        marginLeft: "4px"
     }
 
     const AlbumCoverStyle: React.CSSProperties = {
