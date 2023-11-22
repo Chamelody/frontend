@@ -5,7 +5,7 @@ import ResponsiveSizeConst from "../../constants/ResponsiveSizeConst";
 import BackgroundContainer from "./BackgroundContainer";
 import FlexContainer from "../../components/FlexContainer";
 import PlaylistContent from "./PlaylistContent";
-import Title from "./Title";
+import Content from "./Content";
 
 const PlaylistSection = (): JSX.Element => {
     const location = useLocation();
@@ -23,23 +23,23 @@ const PlaylistSection = (): JSX.Element => {
     });
 
     let layout: {
-        Title: { height: string, width: string },
+        Content: { height: string, width: string },
         PlaylistContent: { height: string, width: string }
     };
 
     if (isTabletScreen) {           // Tablet Screen 
         layout = {
-            Title: { height: "45%", width: "100%" },
+            Content: { height: "45%", width: "100%" },
             PlaylistContent: { height: "55%", width: "100%" }
         }
     } else if (isMobileScreen) {    // Mobile Screen
         layout = {
-            Title: { height: "45%", width: "100%" },
+            Content: { height: "45%", width: "100%" },
             PlaylistContent: { height: "55%", width: "100%" }
         }
     } else {                        // Desktop Screen
         layout = {
-            Title: { height: "100%", width: "55%" },
+            Content: { height: "100%", width: "55%" },
             PlaylistContent: { height: "100%", width: "45%" }
         }
     }
@@ -53,7 +53,7 @@ const PlaylistSection = (): JSX.Element => {
             flexWrap="wrap"
         >
             <BackgroundContainer />
-            <Title height={layout.Title.height} width={layout.Title.width} />
+            <Content height={layout.Content.height} width={layout.Content.width} />
             <PlaylistContent height={layout.PlaylistContent.height} width={layout.PlaylistContent.width} musicList={location.state.musicList} />
 
         </FlexContainer>
