@@ -11,7 +11,7 @@ import FallingEmojis from "./FallingEmojis";
 const PlaylistSection = (): JSX.Element => {
     const location = useLocation();
 
-    console.log(location.state.musicList);
+    // console.log(location.state.musicList);
     const fromEmoji = location.state.fromEmoji;
     const toEmoji = location.state.toEmoji;
 
@@ -58,7 +58,7 @@ const PlaylistSection = (): JSX.Element => {
             <BackgroundContainer />
             <FallingEmojis fromEmoji={fromEmoji} toEmoji={toEmoji} />
 
-            <Content height={layout.Content.height} width={layout.Content.width} fromEmoji={fromEmoji} toEmoji={toEmoji} />
+            <Content musicList={location.state.musicList} height={layout.Content.height} width={layout.Content.width} fromEmoji={fromEmoji} toEmoji={toEmoji} />
             <PlaylistContent height={layout.PlaylistContent.height} width={layout.PlaylistContent.width} musicList={location.state.musicList} />
 
         </FlexContainer>

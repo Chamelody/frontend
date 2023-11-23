@@ -14,13 +14,15 @@ type ContentProps = {
     width: string   // <length> 
     fromEmoji: Emoji
     toEmoji: Emoji
+    musicList: any
 }
 
 const Content = ({
     height,
     width,
     fromEmoji,
-    toEmoji
+    toEmoji,
+    musicList
 }: ContentProps): JSX.Element => {
     const isMobileScreen = useMediaQuery({
         maxWidth: ResponsiveSizeConst.MOBILE_SCREEN_MAX_WIDTH
@@ -69,7 +71,7 @@ const Content = ({
 
                 {/*버튼*/}
                 <DivideItem ratio={componentLayoutInfo.Option}>
-                    <Option />
+                    <Option musicList={musicList} />
                 </DivideItem>
 
                 {/*Space*/}

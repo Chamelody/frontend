@@ -51,7 +51,7 @@ const ButtonField = ({
                 return response.json();
             })
             .then(data => {
-                console.log(data.musicList)
+                console.log(data.musicList);
                 navigate('/playlist', {
                     state: {
                         musicList: data.musicList,
