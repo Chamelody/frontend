@@ -4,11 +4,7 @@ import WordBlock from "../main/components/WordBlock";
 import { useMediaQuery } from "react-responsive";
 import ResponsiveSizeConst from "../../constants/ResponsiveSizeConst";
 import AudioPlayer from "./AudioPlayer";
-import track1 from "../../assets/demo/track01.mp3";
-import track2 from "../../assets/demo/track02.mp3";
-import track3 from "../../assets/demo/track03.mp3";
-import track4 from "../../assets/demo/track04.mp3";
-import track5 from "../../assets/demo/track05.mp3";
+import { audio, images } from "../../constants/style";
 
 type PlaylistComponentProps = {
     height: string  // <length>
@@ -50,11 +46,12 @@ const PlaylistComponent = ({ height, width }: PlaylistComponentProps): JSX.Eleme
             alignItems: "center",
         }}
     >
-        <AudioPlayer src={track1} startTime={86} duration={14} />
-        <AudioPlayer src={track2} startTime={188} duration={14} />
-        <AudioPlayer src={track3} startTime={50} duration={14} />
-        <AudioPlayer src={track4} startTime={76} duration={14} />
-        <AudioPlayer src={track5} startTime={52} duration={12} />
+        {/* <button>Play All in once</button> */}
+        <AudioPlayer index={1} src={audio.track1} startTime={86} duration={14} imgUrl={images.track1} />
+        <AudioPlayer index={2} src={audio.track2} startTime={188} duration={14} imgUrl={images.track2} />
+        <AudioPlayer index={3} src={audio.track3} startTime={50} duration={14} imgUrl={images.track3} />
+        <AudioPlayer index={4} src={audio.track4} startTime={76} duration={14} imgUrl={images.track4} />
+        <AudioPlayer index={5} src={audio.track5} startTime={52} duration={12} imgUrl={images.track5} />
 
     </div>;
 };
