@@ -24,10 +24,15 @@ const icons = {
 
 const images = {
     landing: require("../assets/landing_animate.svg").default,
+    demo_bg: require("../assets/demo_bg.svg").default,
+
 };
 
 const font = {
     family: "Pretendard"
 }
 
-export { palette, icons, images, font };
+const audio = {
+    track1: require("../assets/demo/track01.mp3").default,
+}
+export { palette, icons, images, font, audio };
