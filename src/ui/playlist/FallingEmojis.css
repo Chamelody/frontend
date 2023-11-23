@@ -1,0 +1,22 @@
+#falling {
+    position: relative;
+    display: flex;
+}
+
+#falling span {
+    position: relative;
+    top: -100px;
+    animation: animate 5s linear infinite;
+
+    transform-origin: bottom;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(120vh) scale(1);
+    }
+}

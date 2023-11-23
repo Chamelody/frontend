@@ -6,6 +6,7 @@ import BackgroundContainer from "./BackgroundContainer";
 import FlexContainer from "../../components/FlexContainer";
 import PlaylistContent from "./PlaylistContent";
 import Content from "./Content";
+import FallingEmojis from "./FallingEmojis";
 
 const PlaylistSection = (): JSX.Element => {
     const location = useLocation();
@@ -51,8 +52,12 @@ const PlaylistSection = (): JSX.Element => {
             width="100vw"
             justifyContent="space-between"
             flexWrap="wrap"
+
+            {...{ zIndex: -10}}
         >
             <BackgroundContainer />
+            <FallingEmojis fromEmoji={fromEmoji} toEmoji={toEmoji} />
+
             <Content height={layout.Content.height} width={layout.Content.width} fromEmoji={fromEmoji} toEmoji={toEmoji} />
             <PlaylistContent height={layout.PlaylistContent.height} width={layout.PlaylistContent.width} musicList={location.state.musicList} />
 
