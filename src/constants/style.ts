@@ -1,3 +1,4 @@
+import "../assets/fonts/font.css";
 
 const palette = {
     green: '#2EC364',
@@ -25,4 +26,8 @@ const images = {
     landing: require("../assets/landing_animate.svg").default,
 };
 
-export { palette, icons, images };
+const font = {
+    family: "Pretendard"
+}
+
+export { palette, icons, images, font };

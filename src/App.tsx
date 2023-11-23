@@ -4,6 +4,7 @@ import Main from './ui/main/Main';
 import Home from './ui/home/Home';
 import Playlist from './ui/playlist/Playlist';
 import Loading from './ui/loading/loading';
+import Demo from './ui/demo/Demo';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/home" element={<Home />} />
                 <Route path="/Loading" element={<Loading />} />
                 <Route path="/playlist" element={<Playlist />} />
+                <Route path="/demo" element={<Demo />} />
             </Routes>
         </BrowserRouter>
     )
