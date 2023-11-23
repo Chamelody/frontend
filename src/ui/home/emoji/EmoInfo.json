@@ -262,13 +262,13 @@
                     "unicode": "1F62A",
                     "name": "sleepy-face",
                     "description": "졸린 얼굴",
-                    "emotag": "tried"
+                    "emotag": "tired"
                 },
                 {
                     "unicode": "1F634",
                     "name": "sleeping-face",
                     "description": "잠자는 얼굴",
-                    "emotag": "tried"
+                    "emotag": "tired"
                 },
                 {
                     "unicode": "1F60C",
@@ -280,13 +280,13 @@
                     "unicode": "1F971",
                     "name": "yawning-face",
                     "description": "하품하는 얼굴",
-                    "emotag": "tried"
+                    "emotag": "tired"
                 },
                 {
                     "unicode": "1F915",
                     "name": "face-with-head-bandage",
                     "description": "머리에 붕대를 감은 얼굴",
-                    "emotag": "tried"
+                    "emotag": "tired"
                 }
             ]
         },

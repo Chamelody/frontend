@@ -31,6 +31,8 @@ const PlaylistContent = ({ musicList, height, width }: {
         boxSizing: "border-box",
     }
 
+    console.log(musicList);
+
     return (
         <div
             style={{

@@ -46,7 +46,10 @@ const ButtonField = ({
             },
             body: JSON.stringify(data)
         })
-            .then(response => response.json())
+            .then(response => {
+                console.log(response.status);
+                return response.json();
+            })
             .then(data => {
                 console.log(data.musicList)
                 navigate('/playlist', {
