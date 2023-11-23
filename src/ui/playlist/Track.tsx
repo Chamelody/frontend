@@ -3,6 +3,7 @@ import { DivideContainer, DivideItem } from "../../components/Divider";
 import { palette } from "../../constants/style";
 import { useMediaQuery } from "react-responsive";
 import ResponsiveSizeConst from "../../constants/ResponsiveSizeConst";
+import { ResponsiveText } from "../../components/ResponsiveText";
 
 type TrackProps = {
     index: number;
@@ -32,12 +33,12 @@ const Track = ({ index, imageUrl, name, artists }: TrackProps): JSX.Element => {
     const IndexStyle: React.CSSProperties = {
         color: palette.lightblack,
         height: "100%",
-        fontSize: "10px",
+        fontSize: "12px",
         display: "flex",
         fontWeight: "800",
         flexDirection: "column",
         justifyContent: "center",
-        marginLeft: "4px"
+        marginLeft: "8px"
     }
 
     const AlbumCoverStyle: React.CSSProperties = {
@@ -49,23 +50,24 @@ const Track = ({ index, imageUrl, name, artists }: TrackProps): JSX.Element => {
     }
 
     const NameStyle: React.CSSProperties = {
-        color: palette.lightblack,
-        fontWeight: "800",
         height: "100%",
-        fontSize: "14px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "end",
-        letterSpacing: "-0.5px"
+        letterSpacing: "-0.5px",
+        color: palette.lightblack,
+        fontSize: "14px",
+        fontWeight: "800",
     }
 
     const ArtistsStyle: React.CSSProperties = {
-        color: palette.darkgray,
         height: "100%",
-        fontSize: "10px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        color: palette.darkgray,
+        fontSize: "10px",
+        fontWeight: "800",
     }
 
     return (
@@ -77,8 +79,17 @@ const Track = ({ index, imageUrl, name, artists }: TrackProps): JSX.Element => {
                 </div>
                 <DivideItem ratio={12}>
                     <DivideContainer direction="column" width="100%" height="100%">
-                        <DivideItem ratio={1}><div style={NameStyle}>{name}</div></DivideItem>
-                        <DivideItem ratio={1}><div style={ArtistsStyle}>{artists}</div></DivideItem>
+                        <DivideItem ratio={1}>
+                            <div
+                                style={NameStyle}>{name}
+                            </div>
+                        </DivideItem>
+                        <DivideItem ratio={1}>
+                            <div
+                                style={ArtistsStyle}>
+                                {artists}
+                            </div>
+                        </DivideItem>
                     </DivideContainer>
                 </DivideItem>
             </DivideContainer >
