@@ -24,7 +24,7 @@ const Track = ({ index, imageUrl, name, artists }: TrackProps): JSX.Element => {
 
 
     const TrackContainerStyle: React.CSSProperties = {
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
+        backgroundColor: "rgba(255, 255, 255, 0.7)",
         margin: "8px",
         padding: "4px",
         borderRadius: "0.6vw",

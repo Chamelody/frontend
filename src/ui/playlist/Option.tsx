@@ -31,6 +31,7 @@ const Option = (): JSX.Element => {
         alignItems: "center",
         marginLeft: "3vw",
         marginRight: "1vw",
+        cursor: "pointer",
         transition: "transform 0.3s ease", // Add transition for smooth transform change
         transform: isThumbsUpHovered ? "rotate(15deg)" : "rotate(0deg)", // Initial transform set to 0, will be changed on hover
     };
@@ -44,6 +45,7 @@ const Option = (): JSX.Element => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        cursor: "pointer",
         transition: "width 0.3s ease, transform 0.3s ease", // Add transition for smooth width and transform change
         transform: isSpotifyHovered ? "translateX(6px)" : "translateX(0)", // Initial transform set to 0, will be changed on hover
     };
