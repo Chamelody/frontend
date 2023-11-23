@@ -22,10 +22,10 @@ const LoadingSection = (): JSX.Element => {
         >
             <BackgroundContainer />
             <img
-                src={icons.logo}
+                src={icons.logoLP}
                 style={{
-                    width: isTabletScreen ? "20vw" : "24vh",
-                    height: isTabletScreen ? "20vw" : "24vh",
+                    width: isTabletScreen ? "20vw" : "28vh",
+                    height: isTabletScreen ? "20vw" : "28vh",
                     animation: "spin 8s linear infinite"
                 }}
             />

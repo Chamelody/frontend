@@ -89,18 +89,17 @@ const InputTag = ({
                                     <FlexContainer flexWrap="wrap" alignItems="center" {...flexContainerStyles}>
                                         <WordBlock content={" from"} mode="default" />
                                         <WordBlock
-                                            content={onSelectStartEmoji ? `# ${onSelectStartEmoji.emotag}` : "# currnet mood"}
+                                            content={onSelectStartEmoji ? `# ${onSelectStartEmoji.emotag.split("_")[0]}` : "# currnet mood"}
                                             mode="emotag"
                                             emo={onSelectStartEmoji ? onSelectStartEmoji.unicode : null}
                                             color="#323232"
-
                                         />
                                     </FlexContainer>
 
                                     <FlexContainer flexWrap="wrap" alignItems="center" {...flexContainerStyles}>
                                         <WordBlock content={" to"} mode="default" />
                                         <WordBlock
-                                            content={onSelectTargetEmoji ? `# ${onSelectTargetEmoji.emotag}` : "# mood I want"}
+                                            content={onSelectTargetEmoji ? `# ${onSelectTargetEmoji.emotag.split("_")[0]}` : "# mood I want"}
                                             mode="emotag"
                                             emo={onSelectTargetEmoji ? onSelectTargetEmoji.unicode : null}
                                             color="#323232" />

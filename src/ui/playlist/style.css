@@ -1,5 +1,5 @@
 #backgroundContainer {
-    position: relative;
+    position: absolute;
     background: linear-gradient(80deg, rgb(30, 215, 96), rgb(167, 108, 245));
     width: 100vw;
     height: 100vh;

@@ -4,53 +4,81 @@ import { DivideContainer, DivideItem } from "../../components/Divider";
 import { useMediaQuery } from "react-responsive";
 import { ResponsiveSizeConst } from "../../constants/ResponsiveSizeConst";
 
+import Title from "./Title";
+import Option from "./Option";
+import { Emoji } from "../home/emoji/EmojiTypes";
+
+
 type ContentProps = {
     height: string  // <length>
     width: string   // <length> 
+    fromEmoji: Emoji
+    toEmoji: Emoji
 }
+
 const Content = ({
     height,
-    width, 
+    width,
+    fromEmoji,
+    toEmoji
 }: ContentProps): JSX.Element => {
-    const isMobileScreen = useMediaQuery({ 
+    const isMobileScreen = useMediaQuery({
         maxWidth: ResponsiveSizeConst.MOBILE_SCREEN_MAX_WIDTH
     });
-    
+
     const isTabletScreen = useMediaQuery({
-    minWidth: ResponsiveSizeConst.TABLET_SCREEN_MIN_WIDTH,
-    maxWidth: ResponsiveSizeConst.TABLET_SCREEN_MAX_WIDTH
+        minWidth: ResponsiveSizeConst.TABLET_SCREEN_MIN_WIDTH,
+        maxWidth: ResponsiveSizeConst.TABLET_SCREEN_MAX_WIDTH
     });
 
 
     let componentLayoutInfo: {
-        Space1: number, 
-        Title: number, 
-        Description: number, 
-        Button: number,
-        ButtonLayout: Array<number> 
-        Space2: number
+        SpaceTop: number,
+        Title: number,
+        Option: number,
+        OptionLayout: number[],
+        SpaceBottom: number,
+
     }
-        
-    if (isMobileScreen) {
-        componentLayoutInfo = { Space1: 0, Title: 2, Description: 2, Button: 1, ButtonLayout : [1, 2, 1], Space2: 1};
-    } else if (isTabletScreen) {
-        componentLayoutInfo = { Space1: 1, Title: 4, Description: 2, Button: 1, ButtonLayout : [15, 10, 5], Space2: 0};
-    } else {
-        componentLayoutInfo = { Space1: 1, Title: 2, Description: 2, Button: 1, ButtonLayout : [15, 10, 5], Space2: 1};
+
+    if (isMobileScreen) {           // Mobile Screen
+        componentLayoutInfo = { SpaceTop: 4, Title: 6, Option: 2, OptionLayout: [1, 2, 1], SpaceBottom: 1 };
+    } else if (isTabletScreen) {    // Tablet Screen 
+        componentLayoutInfo = { SpaceTop: 4, Title: 6, Option: 2, OptionLayout: [15, 10, 5], SpaceBottom: 1 };
+    } else {                        // Desktop Screen
+        componentLayoutInfo = { SpaceTop: 1, Title: 2, Option: 1, OptionLayout: [15, 10, 5], SpaceBottom: 2 };
     }
-    
-    
+
+
     return (
-        <div 
-            style={{ 
-            // backgroundColor:'pink',
-            width: width,
-            height: height }}
+        <div
+            style={{
+                width: width,
+                height: height
+            }}
         >
-            
+            <DivideContainer direction="column" width="100%" height="100%">
+
+                {/*Space*/}
+                <DivideItem ratio={componentLayoutInfo.SpaceTop}></DivideItem>
+
+                {/*타이틀*/}
+                <DivideItem ratio={componentLayoutInfo.Title}>
+                    <Title fromEmoji={fromEmoji} toEmoji={toEmoji} />
+                </DivideItem>
+
+                {/*버튼*/}
+                <DivideItem ratio={componentLayoutInfo.Option}>
+                    <Option />
+                </DivideItem>
+
+                {/*Space*/}
+                <DivideItem ratio={componentLayoutInfo.SpaceBottom}></DivideItem>
+
+            </DivideContainer>
         </div>
-       
+
     );
-  };
+};
 
 export default Content;

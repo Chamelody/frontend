@@ -60,7 +60,7 @@ export const ResponsiveText: React.FC<ReponsiveTextProps> = ({
         selectedWidth = typeof width === 'object' ? width[2] : width;
     }
 
-    return <p id={id} className={className} style={{
+    return <div id={id} className={className} style={{
         color: color,
         fontSize: finalFontSize,
         fontWeight: fontWeight,
@@ -70,5 +70,5 @@ export const ResponsiveText: React.FC<ReponsiveTextProps> = ({
         ...otherAttributes
     }}>
         {children}
-    </p>
+    </div>
 }

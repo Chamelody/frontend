@@ -65,25 +65,25 @@
                     "unicode": "1F92E",
                     "name": "face-vomiting",
                     "description": "토하는 얼굴",
-                    "emotag": "disgust"
+                    "emotag": "anger"
                 },
                 {
                     "unicode": "1F922",
                     "name": "nauseated-face",
                     "description": "메스꺼운 얼굴",
-                    "emotag": "disgust"
+                    "emotag": "anger"
                 },
                 {
                     "unicode": "1F975",
                     "name": "hot-face",
                     "description": "더운 얼굴",
-                    "emotag": "hot"
+                    "emotag": "nervous"
                 },
                 {
                     "unicode": "1F976",
                     "name": "cold-face",
                     "description": "추운 얼굴",
-                    "emotag": "cold"
+                    "emotag": "lonely"
                 }
             ]
         },
@@ -94,19 +94,19 @@
                     "unicode": "1F615",
                     "name": "confused-face",
                     "description": "걱정하는 얼굴",
-                    "emotag": "concern"
+                    "emotag": "nervous"
                 },
                 {
                     "unicode": "1F61F",
                     "name": "worried-face",
                     "description": "걱정하는 얼굴",
-                    "emotag": "concern"
+                    "emotag": "nervous"
                 },
                 {
                     "unicode": "1F632",
                     "name": "astonished-face",
                     "description": "놀란 얼굴",
-                    "emotag": "fear"
+                    "emotag": "surprise"
                 },
                 {
                     "unicode": "1F628",
@@ -123,25 +123,54 @@
             ]
         },
         {
+            "category": "face-sad",
+            "subcategories": [
+                {
+                    "unicode": "1F622",
+                    "name": "crying-face",
+                    "description": "슬픈 얼굴",
+                    "emotag": "sad"
+                },
+                {
+                    "unicode": "1F62D",
+                    "name": "loudly-crying-face",
+                    "description": "슬픈 얼굴",
+                    "emotag": "sad"
+                },
+                {
+                    "unicode": "1F61E",
+                    "name": "disappointed-face",
+                    "description": "기운 없는 얼굴",
+                    "emotag": "sad"
+                },
+                {
+                    "unicode": "1F629",
+                    "name": "weary-face",
+                    "description": "소리없는",
+                    "emotag": "sad"
+                }
+            ]
+        },
+        {
             "category": "face-negative",
             "subcategories": [
                 {
                     "unicode": "1F624",
                     "name": "face-with-steam-from-nose",
                     "description": "씩씩거리는 얼굴",
-                    "emotag": "angry"
+                    "emotag": "anger"
                 },
                 {
                     "unicode": "1F621",
                     "name": "enraged-face",
                     "description": "성난 얼굴",
-                    "emotag": "angry"
+                    "emotag": "anger"
                 },
                 {
                     "unicode": "1F92C",
                     "name": "face-with-symbols-on-mouth",
                     "description": "욕하는 얼굴",
-                    "emotag": "angry"
+                    "emotag": "anger"
                 }
             ]
         },
@@ -152,25 +181,176 @@
                     "unicode": "1F973",
                     "name": "partying-face",
                     "description": "파티하는 얼굴",
-                    "emotag": "party"
+                    "emotag": "vitality"
                 },
                 {
                     "unicode": "1F60E",
                     "name": "smiling-face-with-sunglasses",
                     "description": "선글라스트를 쓰고 웃는 얼굴",
-                    "emotag": "sunglasses"
+                    "emotag": "pride"
                 },
                 {
                     "unicode": "1F929",
                     "name": "star-struck",
                     "description": "하버드에 합격하는 얼굴",
-                    "emotag": "star"
+                    "emotag": "vitality"
                 },
                 {
                     "unicode": "1F911",
                     "name": "money-mouth-face",
                     "description": "돈 모양의 입이 있는 얼굴",
-                    "emotag": "money"
+                    "emotag": "longing"
+                }
+            ]
+        },
+        {
+            "category": "face-neutral-skeptical",
+            "subcategories": [
+                {
+                    "unicode": "1F610",
+                    "name": "neutral-face",
+                    "description": "중립적인 얼굴",
+                    "emotag": "default_mood"
+                },
+                {
+                    "unicode": "1F611",
+                    "name": "expressionless-face",
+                    "description": "중립적인 얼굴",
+                    "emotag": "default_mood"
+                },
+                {
+                    "unicode": "1F636",
+                    "name": "face-without-mouth",
+                    "description": "중립적인 얼굴",
+                    "emotag": "default_mood"
+                }
+            ]
+        },
+        {
+            "category": "face-hand",
+            "subcategories": [
+                {
+                    "unicode": "1F917",
+                    "name": "smiling-face-with-open-hands",
+                    "description": "안아주는 얼굴",
+                    "emotag": "love"
+                },
+                {
+                    "unicode": "1F92D",
+                    "name": "face-with-hand-over-mouth",
+                    "description": "쑥스러운 얼굴",
+                    "emotag": "shame"
+                },
+                {
+                    "unicode": "1F914",
+                    "name": "thinking-face",
+                    "description": "고민하는 얼굴",
+                    "emotag": "fear"
+                },
+                {
+                    "unicode": "1FAE3",
+                    "name": "face-with-peeking-eye",
+                    "description": "손 사이로 보는 얼굴",
+                    "emotag": "shame"
+                }
+            ]
+        },
+        {
+            "category": "face-sleepy",
+            "subcategories": [
+                {
+                    "unicode": "1F62A",
+                    "name": "sleepy-face",
+                    "description": "졸린 얼굴",
+                    "emotag": "tried"
+                },
+                {
+                    "unicode": "1F634",
+                    "name": "sleeping-face",
+                    "description": "잠자는 얼굴",
+                    "emotag": "tried"
+                },
+                {
+                    "unicode": "1F60C",
+                    "name": "relieved-face",
+                    "description": "편안한 얼굴",
+                    "emotag": "relax"
+                },
+                {
+                    "unicode": "1F971",
+                    "name": "yawning-face",
+                    "description": "하품하는 얼굴",
+                    "emotag": "tried"
+                },
+                {
+                    "unicode": "1F915",
+                    "name": "face-with-head-bandage",
+                    "description": "머리에 붕대를 감은 얼굴",
+                    "emotag": "tried"
+                }
+            ]
+        },
+        {
+            "category": "Object",
+            "subcategories": [
+                {
+                    "unicode": "1F4A3",
+                    "name": "bomb",
+                    "description": "폭탄",
+                    "emotag": "nervous"
+                },
+                {
+                    "unicode": "1FA79",
+                    "name": "adhesive-bandage",
+                    "description": "상처받은",
+                    "emotag": "sad"
+                },
+                {
+                    "unicode": "1F56F",
+                    "name": "candle",
+                    "description": "촛불",
+                    "emotag": "longing"
+                },
+                {
+                    "unicode": "1F6C1",
+                    "name": "bathtub",
+                    "description": "샤워 욕조",
+                    "emotag": "relax"
+                },
+                {
+                    "unicode": "1F3B0",
+                    "name": "slot-machine",
+                    "description": "도박",
+                    "emotag": "vitality"
+                }
+            ]
+        },
+        {
+            "category": "Activities",
+            "subcategories": [
+                {
+                    "unicode": "1F389",
+                    "name": "party-popper",
+                    "description": "파티 폭죽",
+                    "emotag": "vitality"
+                },
+                {
+                    "unicode": "1F94A",
+                    "name": "boxing-glove",
+                    "description": "권투 글러브",
+                    "emotag": "anger"
+                },
+                {
+                    "unicode": "1F381",
+                    "name": "wrapped-gift",
+                    "description": "선물",
+                    "emotag": "surprise"
+                },
+                {
+                    "unicode": "1F3C6",
+                    "name": "trophy",
+                    "description": "트로피",
+                    "emotag": "pride"
                 }
             ]
         }

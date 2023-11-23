@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { DivideContainer, DivideItem } from "../../../components/Divider";
 import { useMediaQuery } from "react-responsive";
+import { useNavigate } from 'react-router-dom';
 import { ResponsiveSizeConst } from "../../../constants/ResponsiveSizeConst";
 import { icons } from "../../../constants/style";
 import { Emoji } from "../emoji/EmojiTypes";
@@ -20,6 +21,7 @@ const ButtonField = ({
     onSelectStartEmoji,
     onSelectTargetEmoji
 }: ButtonFieldProps): JSX.Element => {
+    const navigate = useNavigate();
     const [showSweetAlert, setShowSweetAlert] = useState(false);
     const isMobileScreen = useMediaQuery({
         maxWidth: ResponsiveSizeConst.MOBILE_SCREEN_MAX_WIDTH
@@ -29,6 +31,36 @@ const ButtonField = ({
         minWidth: ResponsiveSizeConst.TABLET_SCREEN_MIN_WIDTH,
         maxWidth: ResponsiveSizeConst.TABLET_SCREEN_MAX_WIDTH
     });
+
+    const sendEmojiToAPI = () => {
+        const apiUrl = 'http://chamelody.kro.kr:46577/playlist';
+        const data = {
+            fromEmotion: onSelectStartEmoji?.emotag.toUpperCase(),
+            toEmotion: onSelectTargetEmoji?.emotag.toUpperCase()
+        };
+
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.musicList)
+                navigate('/playlist', {
+                    state: {
+                        musicList: data.musicList,
+                        fromEmoji: onSelectStartEmoji,
+                        toEmoji: onSelectTargetEmoji
+                    }
+                })
+            })
+            .catch(error => {
+                console.error('Error occurred while sending mood images:', error);
+            });
+    };
 
     let componentLayoutInfo: {
         SpaceTop: number,
@@ -75,8 +107,7 @@ const ButtonField = ({
                                 if (onSelectStartEmoji === null || onSelectTargetEmoji === null) {
                                     setShowSweetAlert(true);
                                 } else {
-                                    // 선택된 Emoji가 모두 있다면 다른 동작을 수행하거나, Link 컴포넌트에 의한 이동을 진행할 수 있습니다.
-                                    // 예: history.push("/playlist"); // 특정 경로로 이동
+                                    sendEmojiToAPI();
                                 }
                             }}
                         />
