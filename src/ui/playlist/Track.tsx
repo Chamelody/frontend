@@ -3,7 +3,6 @@ import { DivideContainer, DivideItem } from "../../components/Divider";
 import { palette } from "../../constants/style";
 import { useMediaQuery } from "react-responsive";
 import ResponsiveSizeConst from "../../constants/ResponsiveSizeConst";
-import { ResponsiveText } from "../../components/ResponsiveText";
 
 type TrackProps = {
     index: number;
@@ -67,7 +66,7 @@ const Track = ({ index, imageUrl, name, artists }: TrackProps): JSX.Element => {
         justifyContent: "center",
         color: palette.darkgray,
         fontSize: "10px",
-        fontWeight: "800",
+        fontWeight: "00",
     }
 
     return (

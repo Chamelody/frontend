@@ -22,10 +22,12 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = palette.wh
     maxWidth: ResponsiveSizeConst.TABLET_SCREEN_MAX_WIDTH
   });
 
+  const isDesktop = !isMobileScreen && !isTabletScreen;
+
   const fontSizes = {
     mobile: "6vw",
     tablet: "4.2vw",
-    default: "3.2vw",
+    default: "3vw",
   };
 
   const imageSizes = {
@@ -71,7 +73,7 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = palette.wh
     }
   };
 
-  const getResponsiveText = (content: string, color: string = palette.white, fontWeight: number = 800) => {
+  const getResponsiveText = (content: string, color: string = palette.white, fontWeight: number = 700) => {
     return <p
       style={{
         fontSize: getFontSize(),
@@ -90,9 +92,9 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = palette.wh
   const linedHighlight = (content: string, color: string = palette.white) => (
     <div
       style={{
-        padding: isMobileScreen ? "10px" : "15px",
+        padding: isDesktop ? "12px" : "14px",
         borderRadius: '100px',
-        border: isMobileScreen ? "3px solid white" : "5px solid white",
+        border: isDesktop ? "3px solid white" : "2px solid white",
       }}
     >
       {getResponsiveText(content, color)}
@@ -109,7 +111,7 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = palette.wh
         backgroundColor: palette.white
       }}
     >
-      {getResponsiveText(content, color, 900)}
+      {getResponsiveText(content, color, 800)}
     </div>
   );
 
@@ -120,13 +122,13 @@ const WordBlock: React.FC<WordBlockProps> = ({ content, mode, color = palette.wh
         alignItems: 'center',
         justifyContent: 'center',
         height: 'auto',
-        padding: emo ? "8px 18px" : "16px 24px",
+        padding: emo ? "6px 12px" : "16px 24px",
         borderRadius: '100px',
         backgroundColor: palette.white,
         cursor: 'pointer'
       }}
     >
-      {getResponsiveText(content, color, 900)}
+      {getResponsiveText(content, color, 800)}
       {emo && <img
         src={EmojiPath[emo]}
         alt={emo}
