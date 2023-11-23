@@ -22,16 +22,15 @@ const PlaylistContent = ({ musicList, height, width }: {
 
 
     const PlaylistContainerStyle: React.CSSProperties = {
-        backgroundColor: "rgba(33, 33, 33, 0.2)",
+        backgroundColor: "rgba(22, 22, 22, 0.75)",
         width: isDesktop ? "90%" : "92%",
         height: isDesktop ? "80%" : "92%",
         overflow: "auto",
         borderRadius: "3vw",
         padding: "20px 16px 20px 10px",
         boxSizing: "border-box",
+        maxWidth: isDesktop ? "450px" : "800px",
     }
-
-    console.log(musicList);
 
     return (
         <div
@@ -41,9 +40,12 @@ const PlaylistContent = ({ musicList, height, width }: {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                // backgroundColor: "red",
+                // maxWidth: isDesktop ? "450px" : "800px",
+
             }}
         >
-            <div style={PlaylistContainerStyle}>
+            <div style={PlaylistContainerStyle}> 
                 <div className="playlist-box">
                     {musicList.map((music: any, index: number) => (
                         <Track

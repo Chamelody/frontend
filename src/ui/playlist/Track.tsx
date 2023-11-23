@@ -12,10 +12,6 @@ type TrackProps = {
 };
 
 const Track = ({ index, imageUrl, name, artists }: TrackProps): JSX.Element => {
-    const isMobileScreen = useMediaQuery({
-        maxWidth: ResponsiveSizeConst.MOBILE_SCREEN_MAX_WIDTH
-    });
-
     const isTabletScreen = useMediaQuery({
         minWidth: ResponsiveSizeConst.TABLET_SCREEN_MIN_WIDTH,
         maxWidth: ResponsiveSizeConst.TABLET_SCREEN_MAX_WIDTH
@@ -23,14 +19,14 @@ const Track = ({ index, imageUrl, name, artists }: TrackProps): JSX.Element => {
 
 
     const TrackContainerStyle: React.CSSProperties = {
-        backgroundColor: "rgba(255, 255, 255, 0.7)",
+        backgroundColor: "rgba(22, 22, 22, 0.4)",
         margin: "8px",
         padding: "4px",
         borderRadius: "0.6vw",
     }
 
     const IndexStyle: React.CSSProperties = {
-        color: palette.lightblack,
+        color: palette.lightgray,
         height: "100%",
         fontSize: "12px",
         display: "flex",
@@ -53,10 +49,10 @@ const Track = ({ index, imageUrl, name, artists }: TrackProps): JSX.Element => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "end",
-        letterSpacing: "-0.5px",
-        color: palette.lightblack,
+        // letterSpacing: "1px",
+        color: palette.lightgray,
         fontSize: "14px",
-        fontWeight: "800",
+        fontWeight: "400",
     }
 
     const ArtistsStyle: React.CSSProperties = {

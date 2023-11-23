@@ -21,5 +21,6 @@
   "include": [
     "src",
     "src/svg.d.ts",
+    "public/**/*.mp3"
   ]
 }

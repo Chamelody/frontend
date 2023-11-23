@@ -24,10 +24,20 @@ const icons = {
 
 const images = {
     landing: require("../assets/landing_animate.svg").default,
+    demo_bg: require("../assets/demo_bg.svg").default,
+    track1: require("../assets/track1.png"),
+    track2: require("../assets/track2.png"),
+    track3: require("../assets/track3.png"),
+    track4: require("../assets/track4.png"),
+    track5: require("../assets/track5.png"),
 };
 
-const font = {
-    family: "Pretendard"
-}
 
-export { palette, icons, images, font };
+const audio: Record<string, any> = {
+    track1: require("../assets/demo/track01.mp3"),
+    track2: require("../assets/demo/track02.mp3"),
+    track3: require("../assets/demo/track03.mp3"),
+    track4: require("../assets/demo/track04.mp3"),
+    track5: require("../assets/demo/track05.mp3"),
+}
+export { palette, icons, images, audio };
