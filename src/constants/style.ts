@@ -18,7 +18,7 @@ const icons = {
     logoLP: require("../assets/logo_LP.png"),
     spotifyLogo: require("../assets/spotify_logo.png"),
     thumbsUp: require("../assets/good.png"),
-
+    headerLogo: require("../assets/header_logo.png"),
 };
 
 const images = {
