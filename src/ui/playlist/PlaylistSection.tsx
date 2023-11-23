@@ -40,8 +40,8 @@ const PlaylistSection = (): JSX.Element => {
         }
     } else {                        // Desktop Screen
         layout = {
-            Content: { height: "100%", width: "55%" },
-            PlaylistContent: { height: "100%", width: "45%" }
+            Content: { height: "100%", width: "50%" },
+            PlaylistContent: { height: "100%", width: "50%" }
         }
     }
 
@@ -53,7 +53,7 @@ const PlaylistSection = (): JSX.Element => {
             justifyContent="space-between"
             flexWrap="wrap"
 
-            {...{ zIndex: -10}}
+            {...{ zIndex: -10 }}
         >
             <BackgroundContainer />
             <FallingEmojis fromEmoji={fromEmoji} toEmoji={toEmoji} />
